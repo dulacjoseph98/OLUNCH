@@ -1,0 +1,2 @@
+class UserEntitiesController < ApplicationController
+end
