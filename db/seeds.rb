@@ -1,5 +1,7 @@
 puts 'Cleaning up local db...'
 # To be added in reverse order of the creation have to remove the dependent tables first
+Attendee.destroy_all
+Event.destroy_all
 Review.destroy_all
 Location.destroy_all
 UserEntity.destroy_all
@@ -131,14 +133,56 @@ tchai = Location.new(
 tchai.save
 puts 'Finished!'
 
-puts 'Creating reviews...'
-surpriz_review = Review.new(
-  location_id: surpriz.id,
-  comment: "The best Berlin style Kebab house in Paris.",
-  rating: 4,
-  user_id: jojo.id
+puts 'Creating events...'
+lunch_two = Event.new(
+  location_id: favori.id,
+  user_id: jojo.id,
+  start_at: Time.now,
+  public: false,
+  capacity: 2
   )
-surpriz_review.save
+lunch_two.save
+lunch_public = Event.new(
+  location_id: surpriz.id,
+  user_id: kez.id,
+  start_at: Time.now,
+  public: true,
+  capacity: rand(2..12)
+  )
+lunch_two.save
+puts 'Finished!'
+
+puts 'Creating attendees...'
+lunch_two_attendee_one = Attendee.new(
+  user_id: jojo.id,
+  event_id: lunch_two.id,
+  status: 1
+  )
+lunch_two_attendee_one.save
+lunch_two_attendee_two = Attendee.new(
+  user_id: gab.id,
+  event_id: lunch_two.id,
+  status: 1
+  )
+lunch_two_attendee_two.save
+lunch_public_attendee_one = Attendee.new(
+  user_id: kez.id,
+  event_id: lunch_public.id,
+  status: 1
+  )
+lunch_public_attendee_one.save
+lunch_public_attendee_two = Attendee.new(
+  user_id: jojo.id,
+  event_id: lunch_public.id,
+  status: 0
+  )
+lunch_public_attendee_two.save
+lunch_public_attendee_three = Attendee.new(
+  user_id: gab.id,
+  event_id: lunch_public.id,
+  status: 2
+  )
+lunch_public_attendee_three.save
 puts 'Finished!'
 
 puts 'Creating reviews...'
