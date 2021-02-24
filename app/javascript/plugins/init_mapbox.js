@@ -24,9 +24,9 @@ const initMapbox = () => {
         const locationDivs = document.querySelectorAll('.location-show');
         const locationDiv = document.getElementById(`location-${locationId}`)
         locationDivs.forEach((locationDiv) => {
-          locationDiv.classList.add('d-none');
+          locationDiv.classList.add('location-hide');
         });
-        locationDiv.classList.remove('d-none');
+        locationDiv.classList.remove('location-hide');
       });
       // dans le call back de l'eventListener :
       // - récupère l'id de la location
@@ -58,7 +58,7 @@ const closeLocationDiv = () => {
     if (event.target.closest('.marker')) return;
     if (event.target.closest('.location-show__details')) return;
     locationDivs.forEach((locationDiv) => {
-      locationDiv.classList.add('d-none');
+      locationDiv.classList.add('location-hide');
     });
   });
 };
