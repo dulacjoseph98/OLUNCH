@@ -22,14 +22,14 @@ wagon.save
 puts 'Finished!'
 
 puts 'Creating users...'
-jojo = User.new(
+jo = User.new(
   firstname: "Joseph",
   lastname: "Dulac",
-  nickname: "Jojo",
-  email: "jojo@lewagon.org",
+  nickname: "Jo",
+  email: "jo@lewagon.org",
   password: "azerty"
   )
-jojo.save
+jo.save
 gab = User.new(
   firstname: "Gabriel",
   lastname: "Lebrun",
@@ -46,11 +46,27 @@ kez = User.new(
   password: "azerty"
   )
 kez.save
+tom = User.new(
+  firstname: "Thomas",
+  lastname: "Desmoulins",
+  nickname: "Tom",
+  email: "tom@lewagon.org",
+  password: "azerty"
+  )
+tom.save
+igo = User.new(
+  firstname: "Igor",
+  lastname: "Murphy",
+  nickname: "Igo",
+  email: "igo@lewagon.org",
+  password: "azerty"
+  )
+igo.save
 puts 'Finished!'
 
 puts 'Creating user_entities...'
 joseph = UserEntity.new(
-  user_id: jojo.id,
+  user_id: jo.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
@@ -70,29 +86,24 @@ keziah = UserEntity.new(
   status: 0
   )
 keziah.save
+thomas = UserEntity.new(
+  user_id: tom.id,
+  entity_id: wagon.id,
+  role: "teacher",
+  status: 0
+  )
+thomas.save
+igor = UserEntity.new(
+  user_id: igo.id,
+  entity_id: wagon.id,
+  role: "student",
+  status: 0
+  )
+igor.save
 puts 'Finished!'
 
-# Possible categories taken from the Le Wagon list:
-# category = Asian, Burgers, Kebab, Coffee Shop, Hawaiian, Lebanese, Mexican, Pizza, Sandwich, Sushi, Supermarket
-
-# Le Wagon list
-# done - Pour les amateurs de Kebab : Surpriz - [110 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/ZTugDwjeY524Pcb47)
-# done - Raftel Coffee Shop - [16 Villa Gaudelet, 75011 Paris](https://goo.gl/maps/gtFyJbGH7keawLzU8)
-# done - Sandwichs et Salades   : Le Favori - [112 Rue Saint-Maur, 75011 Paris](https://goo.gl/maps/Avc2dwEDV1q1ZH6q9)
-# done - Health : Esprit Tchai - [115 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/WBbZW1XmmRyrvtzeA)
-# to do - Cuisine sans friture : Alicheur - [96 Rue Saint-Maur, 75011 Paris](https://goo.gl/maps/JsLYUT7ohxESojxS8)
-# to do - Cuisine un peu asiatique : Thai Wok House - [121 rue Oberkampf, 75011 Paris](https://goo.gl/maps/NZdyPzFWYodqEL5j6)
-# to do - Cuisine asiatique : James Bún - [126 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/su7TG9TTmfgiKhyF8)
-# to do - Cuisine Hawaïenne : Pokawa - [56 bis Rue Oberkampf, 75011 Paris](https://g.page/pokawa-oberkampf?share)
-# to do - Bistrot, Pizza : Chez Justine - [96 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/fuzYfGdMN4nNAErb9)
-# to do - Burgers : PNY - [96 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/dGg53pMWpmVYxcNG6)
-# to do - Burgers : Le Camion Qui Fume - [66 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/Htu44AiGkkidLomSA)
-# to do - Sushis : Nakagawa - [142 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/tVxRSbZVUohXPtjm8)
-# to do - Viande : La Brigade - [103 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/m26VPxoKsM1po3sT8)
-# to do - Libanais : Le Petit Phénicien - [101 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/Kfn3PYaG9byXCJU99)
-# to do - Mexicain : Bocamexa - [95 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/Rk1HgMgqZLTxvwm57)
-# to do - Monoprix : [89 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/zrXG3o6KgAVjrcz18)
-# to do - Cuisine asiatique : Pierre Sang - [55 Rue Oberkampf, 75011 Paris](https://goo.gl/maps/RLhNsk3VYuocDsCWA)
+# Category taken from the Le Wagon list:
+# Asian, Bistrot, Burger, Kebab, Coffee Shop, Hawaiian, Health, Lebanese, Mexican, Pizza, Sandwich, Supermarket, Sushi
 
 puts 'Creating locations...'
 surpriz = Location.new(
@@ -125,18 +136,135 @@ favori.save
 tchai = Location.new(
   address: "115 Rue Oberkampf, 75011 Paris",
   name: "Esprit Tchai",
-  category: "Asian",
+  category: "Health",
   latitude: 48.865980,
   longitude: 2.378420,
   entity_id: wagon.id
   )
 tchai.save
+alicheur = Location.new(
+  address: "96 Rue Saint-Maur, 75011 Paris",
+  name: "Alicheur",
+  category: "Health",
+  latitude: 48.865540,
+  longitude: 2.377520,
+  entity_id: wagon.id
+  )
+alicheur.save
+thai = Location.new(
+  address: "121 rue Oberkampf, 75011 Paris",
+  name: "Thai Wok House",
+  category: "Asian",
+  latitude: 48.866080,
+  longitude: 2.378870,
+  entity_id: wagon.id
+  )
+thai.save
+jbun = Location.new(
+  address: "126 Rue Oberkampf, 75011 Paris",
+  name: "James Bún",
+  category: "Asian",
+  latitude: 48.866190,
+  longitude: 2.379970,
+  entity_id: wagon.id
+  )
+jbun.save
+pokawa = Location.new(
+  address: "56 bis Rue Oberkampf, 75011 Paris",
+  name: "Pokawa",
+  category: "Hawaiian",
+  latitude: 48.864740,
+  longitude: 2.373330,
+  entity_id: wagon.id
+  )
+pokawa.save
+justine = Location.new(
+  address: "96 Rue Oberkampf, 75011 Paris",
+  name: "Chez Justine",
+  category: "Pizza",
+  latitude: 48.8656521,
+  longitude: 2.3777638,
+  entity_id: wagon.id
+  )
+justine.save
+pny = Location.new(
+  address: "96 Rue Oberkampf, 75011 Paris",
+  name: "PNY",
+  category: "Burger",
+  latitude: 48.8656521,
+  longitude: 2.3777638,
+  entity_id: wagon.id
+  )
+pny.save
+camion = Location.new(
+  address: "66 Rue Oberkampf, 75011 Paris",
+  name: "Le Camion Qui Fume",
+  category: "Burger",
+  latitude: 48.8649671,
+  longitude: 2.3745277,
+  entity_id: wagon.id
+  )
+camion.save
+nakagawa = Location.new(
+  address: "142 Rue Oberkampf, 75011 Paris",
+  name: "Nakagawa",
+  category: "Sushi",
+  latitude: 48.866417,
+  longitude: 2.3808259,
+  entity_id: wagon.id
+  )
+nakagawa.save
+brigade = Location.new(
+  address: "142 Rue Oberkampf, 75011 Paris",
+  name: "La Brigade",
+  category: "Bistrot",
+  latitude: 48.865643,
+  longitude: 2.3769627,
+  entity_id: wagon.id
+  )
+brigade.save
+phenicien = Location.new(
+  address: "101 Rue Oberkampf, 75011 Paris",
+  name: "Le Petit Phénicien",
+  category: "Lebanese",
+  latitude: 48.8655866,
+  longitude: 2.3767246,
+  entity_id: wagon.id
+  )
+phenicien.save
+bocamexa = Location.new(
+  address: "95 Rue Oberkampf, 75011 Paris",
+  name: "Bocamexa",
+  category: "Lebanese",
+  latitude: 48.8654268,
+  longitude: 2.3759715,
+  entity_id: wagon.id
+  )
+bocamexa.save
+monoprix = Location.new(
+  address: "89 Rue Oberkampf, 75011 Paris",
+  name: "Monoprix",
+  category: "Supermarket",
+  latitude: 48.8652769,
+  longitude: 2.3754365,
+  entity_id: wagon.id
+  )
+monoprix.save
+psang = Location.new(
+  address: "55 Rue Oberkampf, 75011 Paris",
+  name: "Pierre Sang",
+  category: "Asian",
+  latitude: 48.8647,
+  longitude: 2.3723457,
+  entity_id: wagon.id
+  )
+psang.save
 puts 'Finished!'
 
 puts 'Creating events...'
 lunch_two = Event.new(
   location_id: favori.id,
-  user_id: jojo.id,
+  user_id: jo.id,
   start_at: Time.now,
   public: false,
   capacity: 2
@@ -154,7 +282,7 @@ puts 'Finished!'
 
 puts 'Creating attendees...'
 lunch_two_attendee_one = Attendee.new(
-  user_id: jojo.id,
+  user_id: jo.id,
   event_id: lunch_two.id,
   status: 1
   )
@@ -172,7 +300,7 @@ lunch_public_attendee_one = Attendee.new(
   )
 lunch_public_attendee_one.save
 lunch_public_attendee_two = Attendee.new(
-  user_id: jojo.id,
+  user_id: jo.id,
   event_id: lunch_public.id,
   status: 0
   )
@@ -190,7 +318,7 @@ surpriz_review = Review.new(
   location_id: surpriz.id,
   comment: "The best Berlin style Kebab house in Paris.",
   rating: 4,
-  user_id: jojo.id
+  user_id: jo.id
   )
 surpriz_review.save
 favori_review = Review.new(
