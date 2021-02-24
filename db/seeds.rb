@@ -99,8 +99,8 @@ surpriz = Location.new(
   address: "110 Rue Oberkampf, 75011 Paris",
   name: "Surpriz",
   category: "Kebab",
-  latitude: 48.865960,
-  longitude: 2.378970,
+  # latitude: 48.865960,
+  # longitude: 2.378970,
   entity_id: wagon.id
   )
 surpriz.save
