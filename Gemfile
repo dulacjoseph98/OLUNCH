@@ -30,7 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 
-# added by igor in order to be able to work on better version of seed (can be removed once Gab's version is push as well)
+# added by igor in order to be able to work on better version of seed
+# can be removed if conflict once Gab's version is push as well
 gem 'geocoder'
 
 
