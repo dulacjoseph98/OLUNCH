@@ -16,7 +16,7 @@ wagon = Entity.new(
   address: "16 Villa Gaudelet, 75011 Paris",
   name: "Le Wagon",
   )
-wagon.save
+wagon.save!
 puts 'Finished!'
 
 puts 'Creating users...'
@@ -27,7 +27,7 @@ jo = User.new(
   email: "jo@lewagon.org",
   password: "azerty"
   )
-jo.save
+jo.save!
 gab = User.new(
   firstname: "Gabriel",
   lastname: "Lebrun",
@@ -35,7 +35,7 @@ gab = User.new(
   email: "gab@lewagon.org",
   password: "azerty"
   )
-gab.save
+gab.save!
 kez = User.new(
   firstname: "Keziah",
   lastname: "Smadja",
@@ -43,7 +43,7 @@ kez = User.new(
   email: "kez@lewagon.org",
   password: "azerty"
   )
-kez.save
+kez.save!
 tom = User.new(
   firstname: "Thomas",
   lastname: "Desmoulins",
@@ -51,7 +51,7 @@ tom = User.new(
   email: "tom@lewagon.org",
   password: "azerty"
   )
-tom.save
+tom.save!
 igo = User.new(
   firstname: "Igor",
   lastname: "Murphy",
@@ -59,7 +59,7 @@ igo = User.new(
   email: "igo@lewagon.org",
   password: "azerty"
   )
-igo.save
+igo.save!
 puts 'Finished!'
 
 puts 'Creating user_entities...'
@@ -69,160 +69,167 @@ joseph = UserEntity.new(
   role: "student",
   status: 0
   )
-joseph.save
+joseph.save!
 gabriel = UserEntity.new(
   user_id: gab.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-gabriel.save
+gabriel.save!
 keziah = UserEntity.new(
   user_id: kez.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-keziah.save
+keziah.save!
 thomas = UserEntity.new(
   user_id: tom.id,
   entity_id: wagon.id,
   role: "teacher",
   status: 0
   )
-thomas.save
+thomas.save!
 igor = UserEntity.new(
   user_id: igo.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-igor.save
+igor.save!
 puts 'Finished!'
 
 # Category taken from the Le Wagon list:
 # Asian, Bistrot, Burger, Kebab, Coffee Shop, Hawaiian, Health, Lebanese, Mexican, Pizza, Sandwich, Supermarket, Sushi
 
 puts 'Creating locations...'
+barracao = Location.new(
+  address: "108 Rue Oberkampf, 75011 Paris",
+  name: "Barracao",
+  category: "Bar",
+  entity_id: wagon.id
+  )
+barracao.save!
 surpriz = Location.new(
   address: "110 Rue Oberkampf, 75011 Paris",
   name: "Surpriz",
   category: "Kebab",
   entity_id: wagon.id
   )
-surpriz.save
+surpriz.save!
 raftel = Location.new(
   address: "16 Villa Gaudelet, 75011 Paris",
   name: "Raftel",
   category: "Coffee Shop",
   entity_id: wagon.id
   )
-raftel.save
+raftel.save!
 favori = Location.new(
   address: "112 Rue Saint-Maur, 75011 Paris",
   name: "Le Favori",
   category: "Sandwich",
   entity_id: wagon.id
   )
-favori.save
+favori.save!
 tchai = Location.new(
   address: "115 Rue Oberkampf, 75011 Paris",
   name: "Esprit Tchai",
   category: "Health",
   entity_id: wagon.id
   )
-tchai.save
+tchai.save!
 alicheur = Location.new(
   address: "96 Rue Saint-Maur, 75011 Paris",
   name: "Alicheur",
   category: "Health",
   entity_id: wagon.id
   )
-alicheur.save
+alicheur.save!
 thai = Location.new(
   address: "121 rue Oberkampf, 75011 Paris",
   name: "Thai Wok House",
   category: "Asian",
   entity_id: wagon.id
   )
-thai.save
+thai.save!
 jbun = Location.new(
   address: "126 Rue Oberkampf, 75011 Paris",
   name: "James Bún",
   category: "Asian",
   entity_id: wagon.id
   )
-jbun.save
+jbun.save!
 pokawa = Location.new(
   address: "56 bis Rue Oberkampf, 75011 Paris",
   name: "Pokawa",
   category: "Hawaiian",
   entity_id: wagon.id
   )
-pokawa.save
+pokawa.save!
 justine = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
   name: "Chez Justine",
   category: "Pizza",
   entity_id: wagon.id
   )
-justine.save
+justine.save!
 pny = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
   name: "PNY",
   category: "Burger",
   entity_id: wagon.id
   )
-pny.save
+pny.save!
 camion = Location.new(
   address: "66 Rue Oberkampf, 75011 Paris",
   name: "Le Camion Qui Fume",
   category: "Burger",
   entity_id: wagon.id
   )
-camion.save
+camion.save!
 nakagawa = Location.new(
   address: "142 Rue Oberkampf, 75011 Paris",
   name: "Nakagawa",
   category: "Sushi",
   entity_id: wagon.id
   )
-nakagawa.save
+nakagawa.save!
 brigade = Location.new(
   address: "142 Rue Oberkampf, 75011 Paris",
   name: "La Brigade",
   category: "Bistrot",
   entity_id: wagon.id
   )
-brigade.save
+brigade.save!
 phenicien = Location.new(
   address: "101 Rue Oberkampf, 75011 Paris",
   name: "Le Petit Phénicien",
   category: "Lebanese",
   entity_id: wagon.id
   )
-phenicien.save
+phenicien.save!
 bocamexa = Location.new(
   address: "95 Rue Oberkampf, 75011 Paris",
   name: "Bocamexa",
   category: "Lebanese",
   entity_id: wagon.id
   )
-bocamexa.save
+bocamexa.save!
 monoprix = Location.new(
   address: "89 Rue Oberkampf, 75011 Paris",
   name: "Monoprix",
   category: "Supermarket",
   entity_id: wagon.id
   )
-monoprix.save
+monoprix.save!
 psang = Location.new(
   address: "55 Rue Oberkampf, 75011 Paris",
   name: "Pierre Sang",
   category: "Asian",
   entity_id: wagon.id
   )
-psang.save
+psang.save!
 puts 'Finished!'
 
 puts 'Creating events...'
@@ -233,7 +240,7 @@ lunch_two = Event.new(
   public: false,
   capacity: 2
   )
-lunch_two.save
+lunch_two.save!
 lunch_public = Event.new(
   location_id: surpriz.id,
   user_id: kez.id,
@@ -241,7 +248,7 @@ lunch_public = Event.new(
   public: true,
   capacity: rand(2..12)
   )
-lunch_two.save
+lunch_public.save!
 puts 'Finished!'
 
 puts 'Creating attendees...'
@@ -250,60 +257,67 @@ lunch_two_attendee_one = Attendee.new(
   event_id: lunch_two.id,
   status: 1
   )
-lunch_two_attendee_one.save
+lunch_two_attendee_one.save!
 lunch_two_attendee_two = Attendee.new(
   user_id: gab.id,
   event_id: lunch_two.id,
   status: 1
   )
-lunch_two_attendee_two.save
+lunch_two_attendee_two.save!
 lunch_public_attendee_one = Attendee.new(
   user_id: kez.id,
   event_id: lunch_public.id,
   status: 1
   )
-lunch_public_attendee_one.save
+lunch_public_attendee_one.save!
 lunch_public_attendee_two = Attendee.new(
   user_id: jo.id,
   event_id: lunch_public.id,
   status: 0
   )
-lunch_public_attendee_two.save
+lunch_public_attendee_two.save!
 lunch_public_attendee_three = Attendee.new(
   user_id: gab.id,
   event_id: lunch_public.id,
   status: 2
   )
-lunch_public_attendee_three.save
+lunch_public_attendee_three.save!
 puts 'Finished!'
 
 puts 'Creating reviews...'
+barracao_review = Review.new(
+  location_id: barracao.id,
+  comment: "Take away beer does the trick.",
+  rating: 4,
+  user_id: jo.id
+  )
+barracao_review.save!
 surpriz_review = Review.new(
   location_id: surpriz.id,
   comment: "The best Berlin style Kebab house in Paris.",
   rating: 4,
   user_id: jo.id
   )
-surpriz_review.save
+surpriz_review.save!
 favori_review = Review.new(
   location_id: favori.id,
   comment: "Great Ham & English Cheddar Cheese sandwich.",
   rating: 3,
   user_id: gab.id
   )
-favori_review.save
+favori_review.save!
 tchai_review = Review.new(
   location_id: tchai.id,
   comment: "Good value for money.",
   rating: 4,
   user_id: kez.id
   )
-tchai_review.save
+tchai_review.save!
 thai_review = Review.new(
   location_id: thai.id,
   comment: "Really good Loc Lac.",
   rating: 4,
   user_id: igo.id
   )
-thai_review.save
+thai_review.save!
 puts 'Finished!'
