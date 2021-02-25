@@ -7,8 +7,7 @@
       input_html: { class: 'olunch-input' } %>
     <%= f.input :rating,
       label: false,
-      as: :radio_buttons,
-      collection: 1..5 %>
+      collection: (1..5).to_a %>
     <%= f.submit "Add a comment", class: "button-green" %>
   <% end %>
 
