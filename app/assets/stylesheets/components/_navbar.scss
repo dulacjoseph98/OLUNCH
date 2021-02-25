@@ -39,8 +39,8 @@
   transition: left 0.3s ease;
   width: 100px;
   box-shadow: 1px 0px 20px #bfbfbf;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  // border-top-right-radius: 30px;
+  // border-bottom-right-radius: 30px;
 
   &:not(.show) {
     left: -100%;

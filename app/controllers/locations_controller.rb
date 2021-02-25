@@ -13,6 +13,11 @@ class LocationsController < ApplicationController
     end
   end
 
+
+  def show
+    @location = Location.find(params[:id])
+  end
+
   def new
     @location = Location.new
     @entity = Entity.find(params[:entity_id])
