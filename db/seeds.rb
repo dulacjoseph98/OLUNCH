@@ -196,7 +196,7 @@ nakagawa = Location.new(
   )
 nakagawa.save!
 brigade = Location.new(
-  address: "142 Rue Oberkampf, 75011 Paris",
+  address: "103 Rue Oberkampf, 75011 Paris",
   name: "La Brigade",
   category: "Bistrot",
   entity_id: wagon.id

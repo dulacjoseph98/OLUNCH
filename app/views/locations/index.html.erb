@@ -7,6 +7,7 @@
     <div id="location-<%= loc.id %>" class="location-show location-hide">
       <%= image_tag 'https://media-cdn.tripadvisor.com/media/photo-s/0d/bf/f1/66/la-fabrica.jpg' %>
 
+
       <div class="location-show__details">
         <div>
           <h2><%= loc.name %></h2>
@@ -22,6 +23,25 @@
               <% end %>
             </div>
           <% end %>
+
+        <div class="location-show__details">
+          <div>
+            <h2><%= loc.name %></h2>
+            <%= loc.address %>
+            <%= link_to new_location_review_path(loc), class: "comment-btn" do  %>
+              <i class="fas fa-comment-dots"></i>
+            <% end %>
+            <% loc.today_public_events.each do |event| %>
+              <div class = "present-users">
+                <i class="fas fa-beer"></i>
+                <% event.users.each do |user| %>
+                  <%= image_tag "https://via.placeholder.com/20", class: "avatar"%>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <%= link_to 'Book a table', new_location_event_path(loc), class: "button" %>
+
         </div>
         <%= link_to 'Book a table', location_events_path(loc), class: "button" %>
       </div>

@@ -1,0 +1,15 @@
+<div class="location-new">
+  <div class="container <!-- fixed-bottom -->">
+    <%= simple_form_for [@location, @review] do |f| %>
+  <%= f.input :comment,
+      label: false,
+      placeholder: 'Type in your comment',
+      input_html: { class: 'olunch-input'} %>
+    <%= f.input :rating,
+     collection: 1..5,
+     input_html: { class: "select2" } %>
+    <%= f.submit "Add a comment", class: "button-green" %>
+  <% end %>
+
+  </div>
+</div>
