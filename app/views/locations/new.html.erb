@@ -6,5 +6,5 @@
   <%= p "Category :" %>
   <%= f.select :category, ['Asian', 'Bar', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi']%>
   <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <%= f.submit "Create Location", class: "button-green" %>
 <% end %>
