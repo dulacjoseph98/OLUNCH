@@ -11,7 +11,7 @@
           <div>
             <h2><%= loc.name %></h2>
             <%= loc.address %>
-            <%= link_to location_path(loc), class: "comment-btn" do  %>
+            <%= link_to new_location_review_path(loc), class: "comment-btn" do  %>
               <i class="fas fa-comment-dots"></i>
             <% end %>
             <% loc.today_public_events.each do |event| %>
