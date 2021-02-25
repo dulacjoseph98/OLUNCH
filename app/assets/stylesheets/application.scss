@@ -13,3 +13,9 @@
 @import "components/index";
 @import "pages/index";
 @import "flatpickr/dist/flatpickr";
+
+// hidden class to handle conditional fomrm
+
+.hidden {
+  display: none;
+}
