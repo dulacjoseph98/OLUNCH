@@ -34,7 +34,7 @@ gem 'geocoder'
 # added by igor in order to be able to work on better version of seed
 # can be removed if conflict once Gab's version is push as well
 gem 'geocoder'
-
+gem 'cloudinary', '~> 1.16.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
