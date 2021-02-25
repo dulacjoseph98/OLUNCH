@@ -13,7 +13,6 @@ class LocationsController < ApplicationController
     end
   end
 
-
   def new
     @location = Location.new
     @entity = Entity.find(params[:entity_id])

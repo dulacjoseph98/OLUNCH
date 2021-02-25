@@ -1,10 +1,20 @@
-<h1>Add a location</h1>
-<!-- <#%= raise %> -->
-<%= simple_form_for [@entity, @location] do |f| %>
-  <%= f.input :name, label: "Location name:" %>
-  <%= f.input :address %>
-  <%= p "Category :" %>
-  <%= f.select :category, ['Asian', 'Bar', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi']%>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="location-new">
+  <div class="container <!-- fixed-bottom -->">
+
+  <%= simple_form_for [@entity, @location] do |f| %>
+  <%= f.input :name,
+      label: false,
+      placeholder: 'Location Name',
+      input_html: { class: 'olunch-input'} %>
+    <%= f.input :address,
+      label: false,
+      placeholder: 'Address',
+      input_html: { class: 'olunch-input'} %>
+    <%= f.select :category,
+     collection: ['Asian', 'Bar', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'] %>
+    <%= f.input :photo, as: :file, label_html: { class: "photo-upload-label" }, input_html: { class: "d-none"} %>
+    <%= f.submit "Create a Location", class: "button-green" %>
+  <% end %>
+
+  </div>
+</div>
