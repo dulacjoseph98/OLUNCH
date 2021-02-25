@@ -29,6 +29,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'geocoder'
 
 # added by igor in order to be able to work on better version of seed
 # can be removed if conflict once Gab's version is push as well
