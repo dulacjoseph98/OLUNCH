@@ -1,0 +1,10 @@
+<h1>Add a location</h1>
+<!-- <#%= raise %> -->
+<%= simple_form_for [@entity, @location] do |f| %>
+  <%= f.input :name, label: "Location name:" %>
+  <%= f.input :address %>
+  <%= p "Category :" %>
+  <%= f.select :category, ['Asian', 'Bar', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi']%>
+  <!-- <#%= f.input :photo, as: :file %> -->
+  <%= f.submit %>
+<% end %>
