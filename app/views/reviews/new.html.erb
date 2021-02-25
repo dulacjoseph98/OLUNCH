@@ -4,10 +4,11 @@
   <%= f.input :comment,
       label: false,
       placeholder: 'Type in your comment',
-      input_html: { class: 'olunch-input'} %>
+      input_html: { class: 'olunch-input' } %>
     <%= f.input :rating,
-     collection: 1..5,
-     input_html: { class: "select2" } %>
+      label: false,
+      as: :radio_buttons,
+      collection: 1..5 %>
     <%= f.submit "Add a comment", class: "button-green" %>
   <% end %>
 
