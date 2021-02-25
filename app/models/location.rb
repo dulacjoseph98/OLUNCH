@@ -16,4 +16,8 @@ class Location < ApplicationRecord
           .where("start_at > ?", Date.today.beginning_of_day)
           .where("start_at < ?", Date.today.end_of_day)
   end
+
+  def average_rating
+    reviews.average(:rating).to_i
+  end
 end
