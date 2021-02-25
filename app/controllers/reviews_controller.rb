@@ -2,8 +2,8 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @location = Location.find(params[:location_id])
-    # raise
   end
+
   def create
     @review = Review.new(review_params)
     @location = Location.find(params[:location_id])
