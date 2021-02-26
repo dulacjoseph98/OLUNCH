@@ -25,7 +25,11 @@
       <% @location.reviews.each do |review| %>
         <div class="location-review">
           <div class="location-review-user">
-            <%= image_tag 'https://via.placeholder.com/30', class: 'avatar' %>
+            <% if review.user.photo.attached? %>
+              <%= cl_image_tag review.user.photo.key, class: 'avatar' %>
+            <% else %>
+              <%= image_tag 'https://via.placeholder.com/30', class: 'avatar' %>
+            <% end %>
             <p><%= review.user.nickname %></p>
           </div>
           <div class="location-review-content">

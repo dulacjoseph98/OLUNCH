@@ -23,7 +23,11 @@
             <div class = "present-users">
               <i class="fas fa-beer"></i>
               <% event.users.each do |user| %>
-                <%= image_tag "https://via.placeholder.com/20", class: "avatar"%>
+                <% if user.photo.attached? %>
+                  <%= cl_image_tag user.photo.key, class: 'avatar' %>
+                <% else %>
+                  <%= image_tag "https://via.placeholder.com/20", class: "avatar" %>
+                <% end %>
               <% end %>
             </div>
           <% end %>

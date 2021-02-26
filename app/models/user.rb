@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :events_as_attendee, through: :attendees, source: :event
   has_many :reviews
+  has_one_attached :photo
 
   def pending_events_as_attendee
     events_as_attendee.joins(:attendees).where(attendees: { status: "pending" }).distinct
