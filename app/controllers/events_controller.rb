@@ -5,17 +5,22 @@ class EventsController < ApplicationController
   end
 
   def create
-    
     @location = Location.find(params[:location_id])
     @event = Event.new(events_params)
     @event.user = current_user
     @event.location = @location
     @event.save
-    redirect_to entity_locations_path(@location.entity)
     params[:invitations][:attendees].reject(&:blank?).each do |attendee_id|
       Attendee.create(user: User.find(attendee_id.to_i), event: @event)
+      end
+      redirect_to dashboard_path
     end
-  end
+
+    
+
+  # def show
+  #   @event = Event.find(events_params[:id])
+  # end
   
 
   private
