@@ -241,6 +241,14 @@ lunch_two = Event.new(
   capacity: 2
   )
 lunch_two.save!
+lunch_three = Event.new(
+  location_id: favori.id,
+  user_id: jo.id,
+  start_at: Time.now,
+  public: false,
+  capacity: 2
+  )
+lunch_three.save!
 lunch_public = Event.new(
   location_id: surpriz.id,
   user_id: kez.id,
@@ -264,6 +272,12 @@ lunch_two_attendee_two = Attendee.new(
   status: 1
   )
 lunch_two_attendee_two.save!
+lunch_three_attendee_one = Attendee.new(
+  user_id: jo.id,
+  event_id: lunch_three.id,
+  status: 0
+  )
+lunch_three_attendee_one.save!
 lunch_public_attendee_one = Attendee.new(
   user_id: kez.id,
   event_id: lunch_public.id,

@@ -1,15 +1,20 @@
+
+<div class="coontainer pt-5">
 <h1>Welcome to the Party</h1>
 
 <%= simple_form_for [@location, @event] do |f| %>
+
   <%= f.input :public, input_html: { id: "public-btn"} %>
+  
   <span id="invitation">
     <%= simple_fields_for :invitations do |x| %>
       <%= x.input :attendees, collection: User.all.map { |user| ["#{user.firstname} #{user.lastname}", user.id]}, input_html: { class: "select2", multiple: true } %>
     <% end %>
   </span>
-
   <%= f.input :start_at, label: "Event Time", as: :string, input_html: { class: 'datepicker' } %>
-  <span class="button-green">
-    <%= f.submit "Create Event" %>
-  </span>
+  <%= f.submit "Create Event", class: "button-green" %>
+  <%= link_to "My Event Dashboard", dashboard_path, class: "button-green" %>
+  <%= link_to "Back to Map", entity_locations_path(current_user.entities.first), class: "button-green" %>
 <% end %>
+</div>
+
