@@ -27,6 +27,7 @@ const initMapbox = () => {
           locationDiv.classList.add('location-hide');
         });
         locationDiv.classList.remove('location-hide');
+        console.log(locationDiv);
       });
       // dans le call back de l'eventListener :
       // - récupère l'id de la location
