@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :reviews
 
   def pending_events_as_attendee
-    events_as_attendee.joins(:attendees).where(attendees: { status: "pending" })
+    events_as_attendee.joins(:attendees).where(attendees: { status: "pending" }).distinct
   end
 
-  def not_pending_events_as_attendee
-    events_as_attendee - pending_events_as_attendee
+  def accepted_events_as_attendee
+    events_as_attendee.joins(:attendees).where(attendees: { status: "accepted" }).distinct
   end
 end

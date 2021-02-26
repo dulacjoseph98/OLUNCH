@@ -1,3 +1,5 @@
+
+<div class="coontainer pt-5">
 <h1>Welcome to the Party</h1>
 
 <%= simple_form_for [@location, @event] do |f| %>
@@ -14,4 +16,5 @@
   <%= link_to "My Event Dashboard", dashboard_path, class: "button-green" %>
   <%= link_to "Back to Map", entity_locations_path(current_user.entities.first), class: "button-green" %>
 <% end %>
+</div>
 
