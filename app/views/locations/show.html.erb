@@ -1,0 +1,65 @@
+<div class="">
+  <%= image_tag 'https://media-cdn.tripadvisor.com/media/photo-s/0d/bf/f1/66/la-fabrica.jpg', class: 'location-image' %>
+  <div class="container">
+
+    <div class="location-header mt-2">
+      <h1><%= @location.name %></h1>
+      <div class="location-cat">
+        <%= @location.category %>
+      </div>
+    </div>
+    <div class="location-avg-review">
+      <% @location.average_rating.times do  %>
+        <i class="fas fa-star"></i>
+      <% end %>
+    </div>
+
+    <div class="location-infos">
+      <div class="location-address">
+        <i class="fas fa-map-marker-alt"></i>
+        <%= @location.address %>
+      </div>
+    </div>
+
+    <div class="location-reviews">
+      <% @location.reviews.each do |review| %>
+        <div class="location-review">
+          <div class="location-review-user">
+            <%= image_tag 'https://via.placeholder.com/30', class: 'avatar' %>
+            <p><%= review.user.nickname %></p>
+          </div>
+          <div class="location-review-content">
+            <div class="location-review-stars">
+              <% review.rating.to_i.times do  %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            </div>
+            <%= review.comment %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<div class="link-to fixed-bottom">
+  <%= link_to 'Back', entity_locations_path(current_user.entities.first), class: "back-btn" %>
+  <%= link_to 'Create a review', "", class: "review-btn", id: "location-review" %>
+  <div id="new-review" class="location-show location-hide">
+    <div class="container">
+      <h2 class='mt-3 mb-3 text-center'>Add a review</h2>
+      <%= simple_form_for [@location, @review] do |f| %>
+        <%= f.input :comment,
+          label: false,
+          placeholder: 'Type in your comment',
+          input_html: { class: 'olunch-input' } %>
+        <%= f.input :rating,
+          label: false,
+          wrapper_html: { class: 'd-flex justify-content-center' },
+          collection: (1..5).to_a %>
+        <%= f.submit "Add a comment", class: "button-green" %>
+      <% end %>
+    </div>
+  </div>
+</div>

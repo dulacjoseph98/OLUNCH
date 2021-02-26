@@ -2,14 +2,16 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @location = Location.find(params[:location_id])
-    # raise
   end
+
   def create
     @review = Review.new(review_params)
     @location = Location.find(params[:location_id])
-    @review.user_id = current_user
+    @review.user = current_user
+    @review.location = @location
     if @review.save
       redirect_to location_path(@location)
+      # redirect_to entity_locations_path(current_user.entities.first)
     else
       render :new
     end
