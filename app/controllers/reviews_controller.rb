@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
     @review.location = @location
     if @review.save
       redirect_to location_path(@location)
+      # redirect_to entity_locations_path(current_user.entities.first)
     else
       render :new
     end

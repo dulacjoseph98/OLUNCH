@@ -45,5 +45,21 @@
 
 <div class="link-to fixed-bottom">
   <%= link_to 'Back', entity_locations_path(current_user.entities.first), class: "back-btn" %>
-  <%= link_to 'Create a review', new_location_review_path(@location), class: "review-btn" %>
+  <%= link_to 'Create a review', "", class: "review-btn", id: "location-review" %>
+  <div id="new-review" class="location-show location-hide">
+    <div class="container">
+      <h2 class='mt-3 mb-3 text-center'>Add a review</h2>
+      <%= simple_form_for [@location, @review] do |f| %>
+        <%= f.input :comment,
+          label: false,
+          placeholder: 'Type in your comment',
+          input_html: { class: 'olunch-input' } %>
+        <%= f.input :rating,
+          label: false,
+          wrapper_html: { class: 'd-flex justify-content-center' },
+          collection: (1..5).to_a %>
+        <%= f.submit "Add a comment", class: "button-green" %>
+      <% end %>
+    </div>
+  </div>
 </div>

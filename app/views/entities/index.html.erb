@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="home-info">
+    <div class="user-info">
+      <%= image_tag 'https://icons.iconarchive.com/icons/diversity-avatars/avatars/256/batman-icon.png', class: "gab-avatar" %>
+      <h6>Hello Gab !</h6>
+      <!-- <%= current_user.email %> -->
+      <h1>My Entities</h1>
+    </div>
+
+    <div class="entities">
+      <% @entities.each do |entity| %>
+        <%= link_to entity_locations_path(entity) do %>
+          <%= image_tag 'https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-b6124eb974be375884558e4464efce48a9b5664f18422768156364363ecdd1fc.png', class: 'entity-avatar' %>
+          <p><%= entity.name  %> </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
