@@ -281,7 +281,7 @@ puts 'Creating attendees...'
 lunch_two_attendee_one = Attendee.new(
   user_id: demoman.id,
   event_id: lunch_two.id,
-  status: 1
+  status: 0
   )
 lunch_two_attendee_one.save!
 lunch_two_attendee_two = Attendee.new(
