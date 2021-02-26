@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts 'Cleaning up local db...'
 # To be added in reverse order of the creation have to remove the dependent tables first
 Attendee.destroy_all
@@ -104,26 +106,32 @@ puts 'Finished!'
 # Asian, Bistrot, Burger, Kebab, Coffee Shop, Hawaiian, Health, Lebanese, Mexican, Pizza, Sandwich, Supermarket, Sushi
 
 puts 'Creating locations...'
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614345946/kxte5hbmithmbiytpnid.jpg')
 barracao = Location.new(
   address: "108 Rue Oberkampf, 75011 Paris",
   name: "Barracao",
   category: "Bar",
   entity_id: wagon.id
   )
+barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
 barracao.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346845/julihkwh5xovuoe7suqs.jpg')
 surpriz = Location.new(
   address: "110 Rue Oberkampf, 75011 Paris",
   name: "Surpriz",
   category: "Kebab",
   entity_id: wagon.id
   )
+surpriz.photo.attach(io: file, filename: 'surpriz.jpg', content_type: 'image/jpg')
 surpriz.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
 raftel = Location.new(
   address: "16 Villa Gaudelet, 75011 Paris",
   name: "Raftel",
   category: "Coffee Shop",
   entity_id: wagon.id
   )
+raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
 raftel.save!
 favori = Location.new(
   address: "112 Rue Saint-Maur, 75011 Paris",
