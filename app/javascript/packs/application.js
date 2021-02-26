@@ -32,6 +32,7 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSelect2 } from "../plugins/init_select2";
 import { initMapbox } from '../plugins/init_mapbox';
 import { toggleInput } from "../functions/event_form";
+import { showReviewDiv } from "../functions/show_review_div";
 import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   toggleInput();
   initStarRating();
+  showReviewDiv();
 });
