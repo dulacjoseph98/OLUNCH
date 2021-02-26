@@ -29,6 +29,10 @@ demoman = User.new(
   email: "demo@lewagon.org",
   password: "azerty"
   )
+avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
+avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
+file = URI.open(avatar_url)
+demoman.photo.attach(io: file, filename: 'demoman.jpg', content_type: 'image/jpg')
 demoman.save!
 
 jo = User.new(
@@ -38,7 +42,12 @@ jo = User.new(
   email: "jo@lewagon.org",
   password: "azerty"
   )
+avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
+avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
+file = URI.open(avatar_url)
+jo.photo.attach(io: file, filename: 'jo.jpg', content_type: 'image/jpg')
 jo.save!
+
 gab = User.new(
   firstname: "Gabriel",
   lastname: "Lebrun",
@@ -46,7 +55,12 @@ gab = User.new(
   email: "gab@lewagon.org",
   password: "azerty"
   )
+avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=female').read)
+avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
+file = URI.open(avatar_url)
+gab.photo.attach(io: file, filename: 'gab.jpg', content_type: 'image/jpg')
 gab.save!
+
 kez = User.new(
   firstname: "Keziah",
   lastname: "Smadja",
@@ -54,7 +68,12 @@ kez = User.new(
   email: "kez@lewagon.org",
   password: "azerty"
   )
+avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
+avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
+file = URI.open(avatar_url)
+kez.photo.attach(io: file, filename: 'kez.jpg', content_type: 'image/jpg')
 kez.save!
+
 tom = User.new(
   firstname: "Thomas",
   lastname: "Desmoulins",
@@ -62,7 +81,12 @@ tom = User.new(
   email: "tom@lewagon.org",
   password: "azerty"
   )
+avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
+avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
+file = URI.open(avatar_url)
+tom.photo.attach(io: file, filename: 'tom.jpg', content_type: 'image/jpg')
 tom.save!
+
 igo = User.new(
   firstname: "Igor",
   lastname: "Murphy",
@@ -70,7 +94,12 @@ igo = User.new(
   email: "igo@lewagon.org",
   password: "azerty"
   )
+avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
+avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
+file = URI.open(avatar_url)
+igo.photo.attach(io: file, filename: 'igor.jpg', content_type: 'image/jpg')
 igo.save!
+
 puts 'Finished!'
 
 puts 'Creating user_entities...'
