@@ -1,9 +1,6 @@
 class DashboardsController < ApplicationController
   def dashboard
-    @events = Event.all
-  end
-
-  def pending
-    
+    @pending_events = current_user.pending_events_as_attendee
+    @events = current_user.not_pending_events_as_attendee + current_user.events
   end
 end

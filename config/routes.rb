@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     resources :attendees, only: [:new, :create]
   end
 
-  resources :attendees, only: [:update]
+  resources :attendees, only: [:update] do 
+    member do 
+      get :accept
+      get :decline
+    end
+  end
  
 
 end
