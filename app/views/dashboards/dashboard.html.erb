@@ -1,9 +1,21 @@
-<h1>My Events</h1>
-<% @pending_events.each do |event| %>
-  <div class="card-pending"><%= event.location.name %> at <%= event.start_at.strftime('%b %e, %l:%M %p') %>, from <%= event.user.nickname %> | <%= link_to "accept", accept_attendee_path(event.attendees.find_by(user_id: current_user.id))   %> | <%= link_to "decline", decline_attendee_path(event.attendees.find_by(user_id: current_user.id)) %> </div>
-<% end %>
-<br><br>
-<% @events.each do |event| %>
-  <div class="card-event"><%= event.location.name %> at <%= event.start_at.strftime('%b %e, %l:%M %p') %>, from <%= event.user.nickname %></div>
-<% end %>
+<div class="container pt-5">
+  <h1>My Events</h1>
+  <div class="container-dash">
+    <h2>Waiting for your answer</h2>
+    
+    <% if  @pending_events.present? %>
+      <% @pending_events.each do |event| %>
+        <div class="card-pending"><%= event.location.name %> at <%= event.start_at.strftime('%b %e, %l:%M %p') %>, from <%= event.user.nickname %> | <%= link_to "accept", accept_attendee_path(event.attendees.find_by(user_id: current_user.id))   %> | <%= link_to "decline", decline_attendee_path(event.attendees.find_by(user_id: current_user.id)) %> </div>
+      <% end %>
+    <% else %>
+      <p>Nobody like you...</p>
+    <% end %>
+    
+    <br><br>
+    <h2>upcomig events</h2>
+    <% @events.each do |event| %>
+      <div class="card-event"><%= event.location.name %> at <%= event.start_at.strftime('%b %e, %l:%M %p') %>, from <%= event.user.nickname %></div>
+    <% end %>
+  </div>
+</div>
 
