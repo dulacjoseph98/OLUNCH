@@ -20,6 +20,15 @@ wagon.save!
 puts 'Finished!'
 
 puts 'Creating users...'
+demoman = User.new(
+  firstname: "Demo",
+  lastname: "Man",
+  nickname: "Rfif",
+  email: "demo@lewagon.org",
+  password: "azerty"
+  )
+demoman.save!
+
 jo = User.new(
   firstname: "Joseph",
   lastname: "Dulac",
@@ -63,6 +72,14 @@ igo.save!
 puts 'Finished!'
 
 puts 'Creating user_entities...'
+demoman = UserEntity.new(
+  user_id: demoman.id,
+  entity_id: wagon.id,
+  role: "Demo guy",
+  status: 0
+  )
+demoman.save!
+
 joseph = UserEntity.new(
   user_id: jo.id,
   entity_id: wagon.id,
@@ -70,6 +87,7 @@ joseph = UserEntity.new(
   status: 0
   )
 joseph.save!
+
 gabriel = UserEntity.new(
   user_id: gab.id,
   entity_id: wagon.id,
@@ -236,7 +254,7 @@ puts 'Creating events...'
 lunch_two = Event.new(
   location_id: favori.id,
   user_id: jo.id,
-  start_at: Time.now,
+  start_at: Time.strptime('02/27/2021 12:45', '%m/%d/%Y %H:%M'),
   public: false,
   capacity: 2
   )
@@ -253,7 +271,7 @@ puts 'Finished!'
 
 puts 'Creating attendees...'
 lunch_two_attendee_one = Attendee.new(
-  user_id: jo.id,
+  user_id: demoman.id,
   event_id: lunch_two.id,
   status: 1
   )
