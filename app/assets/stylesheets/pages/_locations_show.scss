@@ -18,9 +18,9 @@
 
 .location-cat {
   flex: 0 0 auto;
-  background: $brand-green;
+  background: #bf5353;
   padding: 5px 20px;
-  border-radius: 20px;
+  border-radius: 2px;
   color: white;
 }
 
@@ -41,6 +41,7 @@
 }
 
 .location-avg-review {
+  margin-top: 4px;
   color: #ffbe00c7;
 }
 
@@ -71,14 +72,32 @@
   }
 }
 
-.back-btn {
-  background: $brand-green;
-  display: block;
-  padding: 12px;
-  border-radius: 50px;
-  color: white;
-  text-align: center;
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 115px;
+.link-to {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+  .back-btn {
+    background: #629862;
+    display: inline-grid;
+    padding: 5px 20px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  .review-btn {
+    background: #5158b9;
+    display: inline-grid;
+    padding: 5px 20px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 0;
+  }
 }
+

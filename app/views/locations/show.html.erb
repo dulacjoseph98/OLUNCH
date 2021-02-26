@@ -42,4 +42,8 @@
 
   </div>
 </div>
-<%= link_to 'back', entity_locations_path(current_user.entities.first), class: "back-btn" %>
+
+<div class="link-to fixed-bottom">
+  <%= link_to 'Back', entity_locations_path(current_user.entities.first), class: "back-btn" %>
+  <%= link_to 'Create a review', new_location_review_path(@location), class: "review-btn" %>
+</div>
