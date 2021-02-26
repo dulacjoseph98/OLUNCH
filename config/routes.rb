@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'entities#index'
 
   get "/dashboard", to: "dashboards#dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :entities, only: [] do 
+  resources :entities, only: [:index] do
       resources :locations, only: [:index, :new, :create]
       resources :attendees, only: [:index]
   end
@@ -24,6 +24,5 @@ Rails.application.routes.draw do
       get :decline
     end
   end
- 
 
 end

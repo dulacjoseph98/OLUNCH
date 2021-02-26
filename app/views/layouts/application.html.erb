@@ -9,7 +9,7 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    
+
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -19,8 +19,9 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
+
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
+    <%= render 'shared/navbar' unless controller.controller_name == "entities" && controller.action_name == "index" %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
