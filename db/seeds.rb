@@ -180,26 +180,32 @@ raftel = Location.new(
   )
 raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
 raftel.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352378/wcu86rkjvcnowbjjzou2.jpg')
 favori = Location.new(
   address: "112 Rue Saint-Maur, 75011 Paris",
   name: "Le Favori",
   category: "Sandwich",
   entity_id: wagon.id
   )
+favori.photo.attach(io: file, filename: 'favori.jpg', content_type: 'image/jpg')
 favori.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352353/xut2d2qnafq7cjc2ipo0.jpg')
 tchai = Location.new(
   address: "115 Rue Oberkampf, 75011 Paris",
   name: "Esprit Tchai",
   category: "Health",
   entity_id: wagon.id
   )
+tchai.photo.attach(io: file, filename: 'tachai.jpg', content_type: 'image/jpg')
 tchai.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352331/zmvcm4iiydjbxgcxyrqf.jpg')
 alicheur = Location.new(
   address: "96 Rue Saint-Maur, 75011 Paris",
   name: "Alicheur",
   category: "Health",
   entity_id: wagon.id
   )
+alicheur.photo.attach(io: file, filename: 'alicheur.jpg', content_type: 'image/jpg')
 alicheur.save!
 thai = Location.new(
   address: "121 rue Oberkampf, 75011 Paris",
@@ -208,48 +214,61 @@ thai = Location.new(
   entity_id: wagon.id
   )
 thai.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614351804/qy62ky380bbeptoijunq.jpg')
 jbun = Location.new(
   address: "126 Rue Oberkampf, 75011 Paris",
   name: "James Bún",
   category: "Asian",
   entity_id: wagon.id
   )
+jbun.photo.attach(io: file, filename: 'jbun.jpg', content_type: 'image/jpg')
 jbun.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614351796/rogwedj8ly0unzlbzibg.jpg')
 pokawa = Location.new(
   address: "56 bis Rue Oberkampf, 75011 Paris",
   name: "Pokawa",
   category: "Hawaiian",
   entity_id: wagon.id
   )
+pokawa.photo.attach(io: file, filename: 'pokawa.jpg', content_type: 'image/jpg')
 pokawa.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352269/pjik9w9dfunpbjllpkjb.jpg')
 justine = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
   name: "Chez Justine",
   category: "Pizza",
   entity_id: wagon.id
   )
+justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpg')
 justine.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/dkaljojddopdp7zq7ztz.jpg')
 pny = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
   name: "PNY",
   category: "Burger",
   entity_id: wagon.id
   )
+pny.photo.attach(io: file, filename: 'pny.jpg', content_type: 'image/jpg')
 pny.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352176/dlqu1xk5slubj05obn6t.jpg')
 camion = Location.new(
   address: "66 Rue Oberkampf, 75011 Paris",
   name: "Le Camion Qui Fume",
   category: "Burger",
   entity_id: wagon.id
   )
+camion.photo.attach(io: file, filename: 'camion.jpg', content_type: 'image/jpg')
 camion.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352120/f0mdibdbadqavxuvnh1e.jpg')
 nakagawa = Location.new(
   address: "142 Rue Oberkampf, 75011 Paris",
   name: "Nakagawa",
   category: "Sushi",
   entity_id: wagon.id
   )
+nakagawa.photo.attach(io: file, filename: 'nakagawa.jpg', content_type: 'image/jpg')
 nakagawa.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352104/mxyeri6tcp7n3i1j2jjz.jpg')
 brigade = Location.new(
   address: "103 Rue Oberkampf, 75011 Paris",
   name: "La Brigade",
@@ -257,19 +276,23 @@ brigade = Location.new(
   entity_id: wagon.id
   )
 brigade.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352093/p42phpta6mddrndpmikq.jpg')
 phenicien = Location.new(
   address: "101 Rue Oberkampf, 75011 Paris",
   name: "Le Petit Phénicien",
   category: "Lebanese",
   entity_id: wagon.id
   )
+phenicien.photo.attach(io: file, filename: 'phenicien.jpg', content_type: 'image/jpg')
 phenicien.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352081/bwsisjppbeduvughtuiv.jpg')
 bocamexa = Location.new(
   address: "95 Rue Oberkampf, 75011 Paris",
   name: "Bocamexa",
   category: "Lebanese",
   entity_id: wagon.id
   )
+bocamexa.photo.attach(io: file, filename: 'bocamexa.jpg', content_type: 'image/jpg')
 bocamexa.save!
 monoprix = Location.new(
   address: "89 Rue Oberkampf, 75011 Paris",
@@ -278,12 +301,14 @@ monoprix = Location.new(
   entity_id: wagon.id
   )
 monoprix.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352314/ezkxbenlwu2ymwapwczy.jpg')
 psang = Location.new(
   address: "55 Rue Oberkampf, 75011 Paris",
   name: "Pierre Sang",
   category: "Asian",
   entity_id: wagon.id
   )
+psang.photo.attach(io: file, filename: 'psang.jpg', content_type: 'image/jpg')
 psang.save!
 puts 'Finished!'
 
