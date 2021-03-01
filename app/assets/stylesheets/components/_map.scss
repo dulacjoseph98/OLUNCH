@@ -1,7 +1,13 @@
 #map {
   position: relative;
+  font-family: $body-font;
   canvas.mapboxgl-canvas {
     width: 100vw !important;
+  }
+
+  .fa-home {
+    color: #3e2f31;
+    font-size: 24px;
   }
 }
 
@@ -59,7 +65,7 @@
 
   .button {
     display: block;
-    background-color: #629862;
+    background: $brand-color;
     padding: 12px;
     border-radius: 50px;
     color: white;
@@ -67,6 +73,7 @@
     margin-left: 60px;
     margin-right: 60px;
     margin-top: 40px;
+    box-shadow: $box-shadow;
   }
 
   .comment-btn {
@@ -95,6 +102,5 @@
 }
 
 .marker {
-  font-size: 40px;
-  color: #629862;
+  font-size: 35px;
 }

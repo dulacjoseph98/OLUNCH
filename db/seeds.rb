@@ -204,16 +204,16 @@ puts 'Finished!'
 # Category taken from the Le Wagon list:
 # Asian, Bistrot, Burger, Kebab, Coffee Shop, Hawaiian, Health, Lebanese, Mexican, Pizza, Sandwich, Supermarket, Sushi
 
-puts 'Creating locations...'
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614345946/kxte5hbmithmbiytpnid.jpg')
-barracao = Location.new(
-  address: "108 Rue Oberkampf, 75011 Paris",
-  name: "Barracao",
-  category: "Bar",
-  entity_id: wagon.id
-  )
-barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
-barracao.save!
+# puts 'Creating locations...'
+# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614345946/kxte5hbmithmbiytpnid.jpg')
+# barracao = Location.new(
+#   address: "108 Rue Oberkampf, 75011 Paris",
+#   name: "Barracao",
+#   category: "Bar",
+#   entity_id: wagon.id
+#   )
+# barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
+# barracao.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346845/julihkwh5xovuoe7suqs.jpg')
 surpriz = Location.new(
@@ -225,15 +225,15 @@ surpriz = Location.new(
 surpriz.photo.attach(io: file, filename: 'surpriz.jpg', content_type: 'image/jpg')
 surpriz.save!
 
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
-raftel = Location.new(
-  address: "16 Villa Gaudelet, 75011 Paris",
-  name: "Raftel",
-  category: "Coffee Shop",
-  entity_id: wagon.id
-  )
-raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
-raftel.save!
+# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
+# raftel = Location.new(
+#   address: "16 Villa Gaudelet, 75011 Paris",
+#   name: "Raftel",
+#   category: "Coffee Shop",
+#   entity_id: wagon.id
+#   )
+# raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
+# raftel.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352378/wcu86rkjvcnowbjjzou2.jpg')
 favori = Location.new(
@@ -293,15 +293,15 @@ pokawa = Location.new(
 pokawa.photo.attach(io: file, filename: 'pokawa.jpg', content_type: 'image/jpg')
 pokawa.save!
 
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352269/pjik9w9dfunpbjllpkjb.jpg')
-justine = Location.new(
-  address: "96 Rue Oberkampf, 75011 Paris",
-  name: "Chez Justine",
-  category: "Pizza",
-  entity_id: wagon.id
-  )
-justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpg')
-justine.save!
+# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352269/pjik9w9dfunpbjllpkjb.jpg')
+# justine = Location.new(
+#   address: "96 Rue Oberkampf, 75011 Paris",
+#   name: "Chez Justine",
+#   category: "Pizza",
+#   entity_id: wagon.id
+#   )
+# justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpg')
+# justine.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/dkaljojddopdp7zq7ztz.jpg')
 pny = Location.new(
@@ -496,12 +496,12 @@ puts 'Finished!'
 
 
 puts 'Creating reviews...'
-Review.create!(
-  location_id: barracao.id,
-  comment: "Take away beer does the trick.",
-  rating: 4,
-  user_id: jo.id
-  )
+# Review.create!(
+#   location_id: barracao.id,
+#   comment: "Take away beer does the trick.",
+#   rating: 4,
+#   user_id: jo.id
+#   )
 
 Review.create!(
   location_id: surpriz.id,

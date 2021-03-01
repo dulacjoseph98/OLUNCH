@@ -7,12 +7,16 @@ class LocationsController < ApplicationController
       {
         lat: location.latitude,
         lng: location.longitude,
-        location_id: location.id
-        # infoWindow: render_to_string(partial: "info_window", locals: { location: location })
+        location_id: location.id,
+        image_url: helpers.asset_url('marker.png')
       }
     end
+    @entity_marker = {
+      lat: @entity.latitude,
+      lng: @entity.longitude,
+      location_id: @entity.id
+    }
   end
-
 
   def show
     @location = Location.find(params[:id])
