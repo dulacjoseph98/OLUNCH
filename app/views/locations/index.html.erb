@@ -6,9 +6,9 @@
   <% @locations.each do |loc| %>
     <div id="location-<%= loc.id %>" class="location-show location-hide">
       <% if loc.photo.attached? %>
-        <%= cl_image_tag loc.photo.key %>
+        <%= cl_image_tag loc.photo.key, class: 'location-image' %>
       <% else %>
-        <%= image_tag 'https://media-cdn.tripadvisor.com/media/photo-s/0d/bf/f1/66/la-fabrica.jpg' %>
+        <%= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
       <% end %>
 
       <div class="location-show__details">
