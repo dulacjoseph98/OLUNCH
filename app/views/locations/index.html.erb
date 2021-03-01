@@ -12,21 +12,23 @@
       <% end %>
 
       <div class="location-show__details">
-        <div>
+        <div class="infos-loca">
           <h2><%= loc.name %></h2>
           <%= loc.address %>
           <%= link_to location_path(loc), class: "comment-btn" do  %>
             <i class="fas fa-comment-dots"></i>
           <% end %>
           <% loc.today_public_events.each do |event| %>
+            <h3>Public events at <%= loc.name %> :</h3>
             <div class = "present-users">
               <i class="fas fa-beer"></i>
               <% event.users.each do |user| %>
                 <% if user.photo.attached? %>
                   <%= cl_image_tag user.photo.key, class: 'avatar' %>
                 <% else %>
-                  <%= image_tag "https://via.placeholder.com/20", class: "avatar" %>
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
                 <% end %>
+              <%= link_to "join", event_attendees_path(event), class:"button_join", method: :post %>
               <% end %>
             </div>
           <% end %>
