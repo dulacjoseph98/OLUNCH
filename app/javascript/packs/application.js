@@ -34,6 +34,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { toggleInput } from "../functions/event_form";
 import { showReviewDiv } from "../functions/show_review_div";
 import { initStarRating } from '../plugins/init_star_rating';
+import { animAv } from "../functions/avatar_anim";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   toggleInput();
   initStarRating();
   showReviewDiv();
+  animAv();
 });
