@@ -36,6 +36,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initSelect2 } from "../plugins/init_select2";
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initStarRating } from '../plugins/init_star_rating';
+import { animAv } from "../functions/avatar_anim";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 
 document.addEventListener('turbolinks:load', () => {
@@ -48,5 +49,7 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   initFlatpickr();
   initStarRating();
+  showReviewDiv();
+  animAv();
   initAutocomplete();
 });

@@ -36,11 +36,9 @@
   top: 0;
   left: 0;
   z-index: -1;
-  transition: left 0.3s ease;
+  transition: left 0.3s ease-in;
   width: 100px;
   box-shadow: 1px 0px 20px #bfbfbf;
-  // border-top-right-radius: 30px;
-  // border-bottom-right-radius: 30px;
 
   &:not(.show) {
     left: -100%;
@@ -50,7 +48,33 @@
     font-size: 40px;
   }
 
+  // p {
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin-left: 8px;
+  // }
+
   // .fa-plus-square {
   //   font-size: 40px;
   // }
 }
+
+li.nav-item {
+  text-align: center;
+}
+
+// avatar animation css 
+.loading {
+  animation: rotation 0.95s linear;
+}
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(359deg);
+  }
+}
+
+
