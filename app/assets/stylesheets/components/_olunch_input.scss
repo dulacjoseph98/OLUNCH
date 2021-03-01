@@ -28,3 +28,17 @@
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
 }
+
+#new_location {
+  .form-check {
+    padding-left: .5rem;
+  }
+
+// if we wherent to remove the focus light blue shadding
+  // input:focus {
+  //   outline-style: none;
+  //   box-shadow: none;
+  //   border-color: $brand-color;
+  //   // border-color: transparent;
+  // }
+}

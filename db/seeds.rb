@@ -265,6 +265,7 @@ alicheur = Location.new(
   )
 alicheur.photo.attach(io: file, filename: 'alicheur.jpg', content_type: 'image/jpg')
 alicheur.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614615478/ll7op7jbnw25wf0xqkah.png')
 thai = Location.new(
   address: "121 rue Oberkampf, 75011 Paris",
   name: "Thai Wok House",
