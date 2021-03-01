@@ -3,7 +3,7 @@
   overflow: hidden;
   height: 120px;
   background: #ffffff;
-  box-shadow: 0 0 15px #629862;
+  box-shadow: 0 0 15px #fa4c4c;
   display: flex;
   align-items: center;
   border-radius: 30px;
@@ -26,4 +26,12 @@
   margin-left: 5px;
   justify-content: center;
   margin-top: 15px;
+}
+
+h1#event {
+  box-shadow: 0 0 15px #ffe70b;
+  border-radius: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+
 }

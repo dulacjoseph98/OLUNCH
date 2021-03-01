@@ -19,21 +19,21 @@
 
         <li class="nav-item active">
           <%= link_to entity_locations_path(current_user.entities.first), class: "nav-link" do %>
-            <i class="fas fa-map-marked color-green font-size-40px"></i>
+            <i class="fas fa-map-marked $brand-color font-size-40px"></i>
           <% end %>
           <p>Map</p>
         </li>
 
         <li class="nav-item">
           <%= link_to dashboard_path, class: "nav-link" do %>
-            <i class="fas fa-calendar-day color-green font-size-40px"></i>
+            <i class="fas fa-calendar-day $brand-color font-size-40px"></i>
           <% end %>
           <p>Events</p>
         </li>
 
         <li class="nav-item">
           <%= link_to new_entity_location_path(current_user.entities.first), class: "nav-link" do %>
-            <i class="fas fa-calendar-plus color-green font-size-40px"></i>
+            <i class="fas fa-calendar-plus $brand-color font-size-40px"></i>
           <% end %>
           <p>Create Location</p>
         </li>
@@ -41,7 +41,7 @@
 
         <li class="nav-item active">
           <%= link_to root_path, class: "nav-link" do %>
-            <i class="fas fa-th-large color-green font-size-40px"></i>
+            <i class="fas fa-th-large $brand-color font-size-40px"></i>
           <% end %>
           <%#= current_user.entity %>
       
