@@ -52,7 +52,7 @@
 </div>
 
 <div class="link-to fixed-bottom">
-  <%= link_to 'Back', entity_locations_path(current_user.entities.first), class: "back-btn" %>
+  <%= link_to 'Back', entity_locations_path(@location.entity), class: "back-btn" %>
   <%= link_to 'Create a review', "", class: "review-btn", id: "location-review" %>
   <div id="new-review" class="location-show <%= "location-hide" if @review.errors.messages.empty? %>">
     <div class="container">
