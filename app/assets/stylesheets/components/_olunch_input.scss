@@ -4,6 +4,13 @@
   text-align: center;
 }
 
+.test-label {
+  color: #495057;
+  &:hover {
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+}
+
 .photo-upload-label {
   // display: block;
   // background-color: $brand-background;
@@ -21,22 +28,3 @@
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
 }
-
-.category-label {
-  // display: block;
-  // background-color: $brand-background;
-  border-color: $brand-color;
-  // background-color: $light-gray;
-  border-width: 3px;
-  // padding: 12px 20px;
-  // border-radius: 50px;
-  // color: $brand-color;
-  // text-align: center;
-  // margin-left: 0px;
-  // // margin-right: 60px;
-  // margin-top: 12px;
-  // &:hover {
-  //   box-shadow: 0 0 5px rgba(0,0,0,0.3);
-  // }
-}
-
