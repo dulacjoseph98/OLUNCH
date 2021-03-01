@@ -14,12 +14,25 @@ puts 'Finished'
 
 # creation of data in the tables starting with those with no dependencies
 puts 'Creating entities...'
+apple = Entity.new(
+  address: "12 Rue Halévy, 75009 Paris",
+  name: "Apple"
+  )
+file = URI.open('https://static.lexpress.fr/medias_9606/w_1600,h_696,c_crop,x_0,y_285/w_480,h_270,c_fill,g_north/v1402566386/apple-logo-pomme_4918775.jpeg')
+apple.photo.attach(io: file, filename: 'apple.jpg', content_type: 'image/jpg')
+apple.save!
+
+
+
 wagon = Entity.new(
   address: "16 Villa Gaudelet, 75011 Paris",
   name: "Le Wagon",
   )
+file = URI.open('https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-b6124eb974be375884558e4464efce48a9b5664f18422768156364363ecdd1fc.png')
+wagon.photo.attach(io: file, filename: 'wagon.jpg', content_type: 'image/jpg')
 wagon.save!
 puts 'Finished!'
+
 
 puts 'Creating users...'
 demoman = User.new(
@@ -103,50 +116,92 @@ igo.save!
 puts 'Finished!'
 
 puts 'Creating user_entities...'
-demoman = UserEntity.new(
+UserEntity.create!(
   user_id: demoman.id,
   entity_id: wagon.id,
   role: "Demo guy",
   status: 0
   )
-demoman.save!
 
-joseph = UserEntity.new(
+UserEntity.create!(
   user_id: jo.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-joseph.save!
 
-gabriel = UserEntity.new(
+
+UserEntity.create!(
   user_id: gab.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-gabriel.save!
-keziah = UserEntity.new(
+
+UserEntity.create!(
   user_id: kez.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-keziah.save!
-thomas = UserEntity.new(
+
+UserEntity.create!(
   user_id: tom.id,
   entity_id: wagon.id,
   role: "teacher",
   status: 0
   )
-thomas.save!
-igor = UserEntity.new(
+
+UserEntity.create!(
   user_id: igo.id,
   entity_id: wagon.id,
   role: "student",
   status: 0
   )
-igor.save!
+
+UserEntity.create!(
+  user_id: demoman.id,
+  entity_id: apple.id,
+  role: "Demo guy",
+  status: 0
+  )
+
+UserEntity.create!(
+  user_id: jo.id,
+  entity_id: apple.id,
+  role: "student",
+  status: 0
+  )
+
+
+UserEntity.create!(
+  user_id: gab.id,
+  entity_id: apple.id,
+  role: "student",
+  status: 0
+  )
+
+UserEntity.create!(
+  user_id: kez.id,
+  entity_id: apple.id,
+  role: "student",
+  status: 0
+  )
+
+UserEntity.create!(
+  user_id: tom.id,
+  entity_id: apple.id,
+  role: "teacher",
+  status: 0
+  )
+
+UserEntity.create!(
+  user_id: igo.id,
+  entity_id: apple.id,
+  role: "student",
+  status: 0
+  )
+
 puts 'Finished!'
 
 # Category taken from the Le Wagon list:
@@ -310,6 +365,45 @@ psang = Location.new(
   )
 psang.photo.attach(io: file, filename: 'psang.jpg', content_type: 'image/jpg')
 psang.save!
+
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
+hippopotamus = Location.new(
+  address: "1 Boulevard des Capucines, 75002 Paris",
+  name: "Hippopotamus",
+  category: "Burger",
+  entity_id: apple.id
+  )
+hippopotamus.photo.attach(io: file, filename: 'hippopotamus.jpg', content_type: 'image/jpg')
+hippopotamus.save!
+
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
+hanoicaphe = Location.new(
+  address: "30 Boulevard des Italiens, 75009 Paris",
+  name: "Hanoï Cà Phê",
+  category: "Asian",
+  entity_id: apple.id
+  )
+hanoicaphe.photo.attach(io: file, filename: 'hanoicaphe.jpg', content_type: 'image/jpg')
+hanoicaphe.save!
+
+operasandwich = Location.new(
+  address: "1 Rue de Marivaux, 75002 Paris",
+  name: "Opera Sandwich",
+  category: "Sandwich",
+  entity_id: apple.id
+  )
+operasandwich.save!
+
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
+cafeopera = Location.new(
+  address: "9 Rue de Mogador, 75009 Paris",
+  name: "Café de l'Opéra",
+  category: "Bistrot",
+  entity_id: apple.id
+  )
+cafeopera.photo.attach(io: file, filename: 'cafeopera.jpg', content_type: 'image/jpg')
+cafeopera.save!
+
 puts 'Finished!'
 
 puts 'Creating events...'
