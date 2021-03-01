@@ -78,7 +78,7 @@
   }
 
   .present-users {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
 
@@ -88,9 +88,16 @@
   }
 
   .fa-beer:before {
+    height: 40px;
+    size: 40px;
     font-size: 30px;
     color: #efb64d;
-    padding-right: 15px;
+    padding-right: 10px;
+  }
+
+  h3 {
+    margin-top: 50px;
+    color: $brand-green;
   }
 }
 
