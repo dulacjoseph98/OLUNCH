@@ -1,5 +1,9 @@
 <div class="">
-  <%= image_tag 'https://media-cdn.tripadvisor.com/media/photo-s/0d/bf/f1/66/la-fabrica.jpg', class: 'location-image' %>
+  <% if @location.photo.attached? %>
+    <%= cl_image_tag @location.photo.key, class: 'location-image' %>
+  <% else %>
+    <%= image_tag 'https://media-cdn.tripadvisor.com/media/photo-s/0d/bf/f1/66/la-fabrica.jpg', class: 'location-image' %>
+  <% end %>
   <div class="container">
 
     <div class="location-header mt-2">
@@ -50,7 +54,7 @@
 <div class="link-to fixed-bottom">
   <%= link_to 'Back', entity_locations_path(current_user.entities.first), class: "back-btn" %>
   <%= link_to 'Create a review', "", class: "review-btn", id: "location-review" %>
-  <div id="new-review" class="location-show location-hide">
+  <div id="new-review" class="location-show <%= "location-hide" if @review.errors.messages.empty? %>">
     <div class="container">
       <h2 class='mt-3 mb-3 text-center'>Add a review</h2>
       <%= simple_form_for [@location, @review] do |f| %>

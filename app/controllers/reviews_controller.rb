@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
       redirect_to location_path(@location)
       # redirect_to entity_locations_path(current_user.entities.first)
     else
-      render :new
+      render "locations/show"
     end
   end
 
