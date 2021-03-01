@@ -19,9 +19,15 @@
           <%= f.input :category,
            label: false,
            collection: ['Asian', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'],
-           input_html: { class: "select2" } %>
+           input_html: { class: "select2", class: 'olunch-input' },
+           label_html: { class: "test-label" },
+           wrapper_html: { class: "test-wrapper" } %>
          </div>
-        <%= f.input :photo, as: :file, label: "Upload photo", label_html: { class: "photo-upload-label" }, input_html: { class: "d-none"} %>
+        <%= f.input :photo,
+          as: :file,
+          label: "Upload photo",
+          label_html: { class: "photo-upload-label" },
+          input_html: { class: "d-none"} %>
         <%= f.submit "Create a Location", class: "button-green" %>
       <% end %>
     </div>
