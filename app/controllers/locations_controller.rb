@@ -31,7 +31,7 @@ class LocationsController < ApplicationController
     @location.entity_id = @entity.id
     # raise
     if @location.save
-      redirect_to entity_location_path(@entity)
+      redirect_to entity_locations_path(@entity)
     else
       render :new
     end
