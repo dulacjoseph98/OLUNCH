@@ -11,7 +11,10 @@
           label: false,
           placeholder: 'Address',
           input_html: { class: 'olunch-input'} %>
-        <%= f.input :bar, as: :boolean, input_html: { class: "toggle", id: "baronoff" } %>
+        <div class="row justify-content-center">
+          <p>Restaurant</p>
+          <%= f.input :bar, as: :boolean, input_html: { class: "toggle", id: "baronoff" } %>
+        </div>
         <div id="categoryfield">
           <%= f.input :category,
            label: false,
