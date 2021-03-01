@@ -11,6 +11,8 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  before_save :category_is_bar?
+
   def today_public_events
     events.where(public: true)
           .where("start_at > ?", Date.today.beginning_of_day)
@@ -19,5 +21,9 @@ class Location < ApplicationRecord
 
   def average_rating
     reviews.average(:rating).to_i
+  end
+
+  def category_is_bar?
+    self.category = "bar" if self.bar
   end
 end

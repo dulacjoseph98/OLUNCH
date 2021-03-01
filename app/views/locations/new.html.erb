@@ -11,11 +11,13 @@
           label: false,
           placeholder: 'Address',
           input_html: { class: 'olunch-input'} %>
-        <%= f.input :category,
-         label: false,
-         collection: ['Asian', 'Bar', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'],
-         input_html: { class: "select2" } %>
-        <%= f.input :bar, as: :boolean, input_html: { class: "toggle" } %>
+        <%= f.input :bar, as: :boolean, input_html: { class: "toggle", id: "baronoff" } %>
+        <div id="categoryfield">
+          <%= f.input :category,
+           label: false,
+           collection: ['Asian', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'],
+           input_html: { class: "select2" } %>
+         </div>
         <%= f.input :photo, as: :file, label: "Upload photo", label_html: { class: "photo-upload-label" }, input_html: { class: "d-none"} %>
         <%= f.submit "Create a Location", class: "button-green" %>
       <% end %>
