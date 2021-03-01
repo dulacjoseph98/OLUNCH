@@ -2,24 +2,43 @@ import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+  const navbar = document.querySelector(".navbar-collapse");
+
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
+      style: 'mapbox://styles/glebrun/cklqr8koc2nyb17lk7p0l8a0h'
     });
 
+    mapElement.addEventListener("click", (event) => {
+      if (navbar.classList.contains("show")) {
+        navbar.classList.remove("show");
+      }
+    })
+
     const markers = JSON.parse(mapElement.dataset.markers);
+
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
       const markerDiv = document.createElement('div');
-      markerDiv.innerHTML = `<i class="fas fa-map-marker-alt"></i>`;
+
+      markerDiv.style.backgroundImage = `url('${marker.image_url}')`;
+      markerDiv.style.backgroundSize = 'contain';
+      markerDiv.style.backgroundPosition = 'center';
+      markerDiv.style.backgroundRepeat = 'no-repeat';
+      markerDiv.style.width = '25px';
+      markerDiv.style.height = '40px';
       markerDiv.classList.add('marker');
       markerDiv.dataset.locationId = marker.location_id;
 
       // ajouter un eventListener sur le marker (click)
       markerDiv.addEventListener('click', (event) => {
+
+        if (navbar.classList.contains("show")) {
+          navbar.classList.remove("show");
+        }
         const locationId = markerDiv.dataset.locationId;
         const locationDivs = document.querySelectorAll('.location-show');
         const locationDiv = document.getElementById(`location-${locationId}`)
@@ -27,20 +46,29 @@ const initMapbox = () => {
           locationDiv.classList.add('location-hide');
         });
         locationDiv.classList.remove('location-hide');
-        console.log(locationDiv);
       });
-      // dans le call back de l'eventListener :
-      // - récupère l'id de la location
-      // - récupère la la div avec l'id 'location-...' (... => id de la location)
-      // - tu enlèves la classe d-none sur cette div
-
 
       new mapboxgl.Marker(markerDiv)
         .setLngLat([ marker.lng, marker.lat ])
         // .setPopup(popup)
         .addTo(map);
     });
-    fitMapToMarkers(map, markers);
+
+
+    const entityMarker = JSON.parse(mapElement.dataset.entityMarker);
+    const entityMarkerDiv = document.createElement('div');
+
+    entityMarkerDiv.innerHTML = `<i class="fas fa-home"></i>`;
+    entityMarkerDiv.classList.add('marker');
+    entityMarkerDiv.classList.add('entity-marker');
+    new mapboxgl.Marker(entityMarkerDiv)
+        .setLngLat([ entityMarker.lng, entityMarker.lat ])
+        // .setPopup(popup)
+        .addTo(map);
+
+    const allMarkers = markers;
+    allMarkers.push(entityMarker);
+    fitMapToMarkers(map, allMarkers);
     closeLocationDiv(map);
   }
 };
