@@ -28,21 +28,28 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-import { initFlatpickr } from '../plugins/init_flatpickr';
-import { initSelect2 } from "../plugins/init_select2";
-import { initMapbox } from '../plugins/init_mapbox';
 import { toggleInput } from "../functions/event_form";
 import { showReviewDiv } from "../functions/show_review_div";
+import { hideInputField } from '../functions/hide_category_field';
+
+import { initMapbox } from '../plugins/init_mapbox';
+import { initSelect2 } from "../plugins/init_select2";
+import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initStarRating } from '../plugins/init_star_rating';
 import { animAv } from "../functions/avatar_anim";
+import { initAutocomplete } from "../plugins/init_autocomplete";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initSelect2();
-  initMapbox();
-  initFlatpickr();
   toggleInput();
+  showReviewDiv();
+  hideInputField();
+
+  initMapbox();
+  initSelect2();
+  initFlatpickr();
   initStarRating();
   showReviewDiv();
   animAv();
+  initAutocomplete();
 });
