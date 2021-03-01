@@ -1,0 +1,14 @@
+.button_join {
+  display: block;
+  height: 40px;
+  background-color: $brand-green;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: white;
+  text-align: center;
+  &:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    text-decoration: none;
+  }
+}

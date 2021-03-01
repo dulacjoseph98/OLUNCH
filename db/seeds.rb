@@ -130,6 +130,7 @@ UserEntity.create!(
   status: 0
   )
 
+
 UserEntity.create!(
   user_id: gab.id,
   entity_id: wagon.id,
@@ -172,6 +173,7 @@ UserEntity.create!(
   status: 0
   )
 
+
 UserEntity.create!(
   user_id: gab.id,
   entity_id: apple.id,
@@ -199,21 +201,22 @@ UserEntity.create!(
   role: "student",
   status: 0
   )
+
 puts 'Finished!'
 
 # Category taken from the Le Wagon list:
 # Asian, Bistrot, Burger, Kebab, Coffee Shop, Hawaiian, Health, Lebanese, Mexican, Pizza, Sandwich, Supermarket, Sushi
 
-# puts 'Creating locations...'
-# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614345946/kxte5hbmithmbiytpnid.jpg')
-# barracao = Location.new(
-#   address: "108 Rue Oberkampf, 75011 Paris",
-#   name: "Barracao",
-#   category: "Bar",
-#   entity_id: wagon.id
-#   )
-# barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
-# barracao.save!
+puts 'Creating locations...'
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614596772/yqrxpq0ydvuozt9ya4gz.jpg')
+barracao = Location.new(
+  address: "108 Rue Oberkampf, 75011 Paris",
+  name: "Barracao",
+  category: "Bar",
+  entity_id: wagon.id
+  )
+barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
+barracao.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346845/julihkwh5xovuoe7suqs.jpg')
 surpriz = Location.new(
@@ -225,15 +228,15 @@ surpriz = Location.new(
 surpriz.photo.attach(io: file, filename: 'surpriz.jpg', content_type: 'image/jpg')
 surpriz.save!
 
-# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
-# raftel = Location.new(
-#   address: "16 Villa Gaudelet, 75011 Paris",
-#   name: "Raftel",
-#   category: "Coffee Shop",
-#   entity_id: wagon.id
-#   )
-# raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
-# raftel.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
+raftel = Location.new(
+  address: "16 Villa Gaudelet, 75011 Paris",
+  name: "Raftel",
+  category: "Coffee Shop",
+  entity_id: wagon.id
+  )
+raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
+raftel.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352378/wcu86rkjvcnowbjjzou2.jpg')
 favori = Location.new(
@@ -244,7 +247,6 @@ favori = Location.new(
   )
 favori.photo.attach(io: file, filename: 'favori.jpg', content_type: 'image/jpg')
 favori.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352353/xut2d2qnafq7cjc2ipo0.jpg')
 tchai = Location.new(
   address: "115 Rue Oberkampf, 75011 Paris",
@@ -254,7 +256,6 @@ tchai = Location.new(
   )
 tchai.photo.attach(io: file, filename: 'tachai.jpg', content_type: 'image/jpg')
 tchai.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352331/zmvcm4iiydjbxgcxyrqf.jpg')
 alicheur = Location.new(
   address: "96 Rue Saint-Maur, 75011 Paris",
@@ -264,7 +265,6 @@ alicheur = Location.new(
   )
 alicheur.photo.attach(io: file, filename: 'alicheur.jpg', content_type: 'image/jpg')
 alicheur.save!
-
 thai = Location.new(
   address: "121 rue Oberkampf, 75011 Paris",
   name: "Thai Wok House",
@@ -272,7 +272,6 @@ thai = Location.new(
   entity_id: wagon.id
   )
 thai.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614351804/qy62ky380bbeptoijunq.jpg')
 jbun = Location.new(
   address: "126 Rue Oberkampf, 75011 Paris",
@@ -282,7 +281,6 @@ jbun = Location.new(
   )
 jbun.photo.attach(io: file, filename: 'jbun.jpg', content_type: 'image/jpg')
 jbun.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614351796/rogwedj8ly0unzlbzibg.jpg')
 pokawa = Location.new(
   address: "56 bis Rue Oberkampf, 75011 Paris",
@@ -293,17 +291,17 @@ pokawa = Location.new(
 pokawa.photo.attach(io: file, filename: 'pokawa.jpg', content_type: 'image/jpg')
 pokawa.save!
 
-# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352269/pjik9w9dfunpbjllpkjb.jpg')
-# justine = Location.new(
-#   address: "96 Rue Oberkampf, 75011 Paris",
-#   name: "Chez Justine",
-#   category: "Pizza",
-#   entity_id: wagon.id
-#   )
-# justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpg')
-# justine.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352269/w04cm0gy2yhc31k901o9.jpg')
+justine = Location.new(
+  address: "96 Rue Oberkampf, 75011 Paris",
+  name: "Chez Justine",
+  category: "Pizza",
+  entity_id: wagon.id
+  )
+justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpg')
+justine.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
 
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/dkaljojddopdp7zq7ztz.jpg')
 pny = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
   name: "PNY",
@@ -312,7 +310,6 @@ pny = Location.new(
   )
 pny.photo.attach(io: file, filename: 'pny.jpg', content_type: 'image/jpg')
 pny.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352176/dlqu1xk5slubj05obn6t.jpg')
 camion = Location.new(
   address: "66 Rue Oberkampf, 75011 Paris",
@@ -322,7 +319,6 @@ camion = Location.new(
   )
 camion.photo.attach(io: file, filename: 'camion.jpg', content_type: 'image/jpg')
 camion.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352120/f0mdibdbadqavxuvnh1e.jpg')
 nakagawa = Location.new(
   address: "142 Rue Oberkampf, 75011 Paris",
@@ -332,7 +328,6 @@ nakagawa = Location.new(
   )
 nakagawa.photo.attach(io: file, filename: 'nakagawa.jpg', content_type: 'image/jpg')
 nakagawa.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352104/mxyeri6tcp7n3i1j2jjz.jpg')
 brigade = Location.new(
   address: "103 Rue Oberkampf, 75011 Paris",
@@ -341,7 +336,6 @@ brigade = Location.new(
   entity_id: wagon.id
   )
 brigade.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352093/p42phpta6mddrndpmikq.jpg')
 phenicien = Location.new(
   address: "101 Rue Oberkampf, 75011 Paris",
@@ -351,7 +345,6 @@ phenicien = Location.new(
   )
 phenicien.photo.attach(io: file, filename: 'phenicien.jpg', content_type: 'image/jpg')
 phenicien.save!
-
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352081/bwsisjppbeduvughtuiv.jpg')
 bocamexa = Location.new(
   address: "95 Rue Oberkampf, 75011 Paris",
@@ -361,7 +354,6 @@ bocamexa = Location.new(
   )
 bocamexa.photo.attach(io: file, filename: 'bocamexa.jpg', content_type: 'image/jpg')
 bocamexa.save!
-
 monoprix = Location.new(
   address: "89 Rue Oberkampf, 75011 Paris",
   name: "Monoprix",
@@ -369,8 +361,7 @@ monoprix = Location.new(
   entity_id: wagon.id
   )
 monoprix.save!
-
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352314/ezkxbenlwu2ymwapwczy.jpg')
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352314/pjlcbkatupodl8drntmf.jpg')
 psang = Location.new(
   address: "55 Rue Oberkampf, 75011 Paris",
   name: "Pierre Sang",
@@ -380,9 +371,7 @@ psang = Location.new(
 psang.photo.attach(io: file, filename: 'psang.jpg', content_type: 'image/jpg')
 psang.save!
 
-
-
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352093/p42phpta6mddrndpmikq.jpg')
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
 hippopotamus = Location.new(
   address: "1 Boulevard des Capucines, 75002 Paris",
   name: "Hippopotamus",
@@ -392,7 +381,7 @@ hippopotamus = Location.new(
 hippopotamus.photo.attach(io: file, filename: 'hippopotamus.jpg', content_type: 'image/jpg')
 hippopotamus.save!
 
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352081/bwsisjppbeduvughtuiv.jpg')
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
 hanoicaphe = Location.new(
   address: "30 Boulevard des Italiens, 75009 Paris",
   name: "Hanoï Cà Phê",
@@ -410,7 +399,7 @@ operasandwich = Location.new(
   )
 operasandwich.save!
 
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352314/ezkxbenlwu2ymwapwczy.jpg')
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
 cafeopera = Location.new(
   address: "9 Rue de Mogador, 75009 Paris",
   name: "Café de l'Opéra",
@@ -421,10 +410,6 @@ cafeopera.photo.attach(io: file, filename: 'cafeopera.jpg', content_type: 'image
 cafeopera.save!
 
 puts 'Finished!'
-
-
-
-
 
 puts 'Creating events...'
 lunch_two = Event.new(
@@ -454,54 +439,52 @@ lunch_public.save!
 puts 'Finished!'
 
 puts 'Creating attendees...'
-Attendee.create!(
+lunch_two_attendee_one = Attendee.new(
   user_id: demoman.id,
   event_id: lunch_two.id,
   status: 0
   )
-
-Attendee.create!(
+lunch_two_attendee_one.save!
+lunch_two_attendee_two = Attendee.new(
   user_id: gab.id,
   event_id: lunch_two.id,
   status: 1
   )
-
-Attendee.create!(
+lunch_two_attendee_two.save!
+lunch_three_attendee_one = Attendee.new(
   user_id: jo.id,
   event_id: lunch_three.id,
   status: 0
   )
-
-Attendee.create!(
+lunch_three_attendee_one.save!
+lunch_public_attendee_one = Attendee.new(
   user_id: kez.id,
   event_id: lunch_public.id,
   status: 1
   )
-
-Attendee.create!(
+lunch_public_attendee_one.save!
+lunch_public_attendee_two = Attendee.new(
   user_id: jo.id,
   event_id: lunch_public.id,
   status: 0
   )
-
-Attendee.create!(
+lunch_public_attendee_two.save!
+lunch_public_attendee_three = Attendee.new(
   user_id: gab.id,
   event_id: lunch_public.id,
   status: 2
   )
-
+lunch_public_attendee_three.save!
 puts 'Finished!'
 
-
-
-
 puts 'Creating reviews...'
-# Review.create!(
-#   location_id: barracao.id,
-#   comment: "Take away beer does the trick.",
-#   rating: 4,
-#   user_id: jo.id
-#   )
+
+Review.create!(
+  location_id: barracao.id,
+  comment: "Take away beer does the trick.",
+  rating: 4,
+  user_id: jo.id
+  )
 
 Review.create!(
   location_id: surpriz.id,
