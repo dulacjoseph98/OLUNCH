@@ -217,6 +217,7 @@ barracao = Location.new(
   )
 barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
 barracao.save!
+
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346845/julihkwh5xovuoe7suqs.jpg')
 surpriz = Location.new(
   address: "110 Rue Oberkampf, 75011 Paris",
@@ -226,6 +227,7 @@ surpriz = Location.new(
   )
 surpriz.photo.attach(io: file, filename: 'surpriz.jpg', content_type: 'image/jpg')
 surpriz.save!
+
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
 raftel = Location.new(
   address: "16 Villa Gaudelet, 75011 Paris",
@@ -235,6 +237,7 @@ raftel = Location.new(
   )
 raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
 raftel.save!
+
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352378/wcu86rkjvcnowbjjzou2.jpg')
 favori = Location.new(
   address: "112 Rue Saint-Maur, 75011 Paris",
@@ -262,6 +265,7 @@ alicheur = Location.new(
   )
 alicheur.photo.attach(io: file, filename: 'alicheur.jpg', content_type: 'image/jpg')
 alicheur.save!
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614615478/ll7op7jbnw25wf0xqkah.png')
 thai = Location.new(
   address: "121 rue Oberkampf, 75011 Paris",
   name: "Thai Wok House",
@@ -287,6 +291,7 @@ pokawa = Location.new(
   )
 pokawa.photo.attach(io: file, filename: 'pokawa.jpg', content_type: 'image/jpg')
 pokawa.save!
+
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352269/w04cm0gy2yhc31k901o9.jpg')
 justine = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
@@ -297,6 +302,7 @@ justine = Location.new(
 justine.photo.attach(io: file, filename: 'justine.jpg', content_type: 'image/jpg')
 justine.save!
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352193/og7ydrcrws0mfptwh4v2.jpg')
+
 pny = Location.new(
   address: "96 Rue Oberkampf, 75011 Paris",
   name: "PNY",
@@ -473,39 +479,40 @@ lunch_public_attendee_three.save!
 puts 'Finished!'
 
 puts 'Creating reviews...'
-barracao_review = Review.new(
+
+Review.create!(
   location_id: barracao.id,
   comment: "Take away beer does the trick.",
   rating: 4,
   user_id: jo.id
   )
-barracao_review.save!
-surpriz_review = Review.new(
+
+Review.create!(
   location_id: surpriz.id,
   comment: "The best Berlin style Kebab house in Paris.",
   rating: 4,
   user_id: jo.id
   )
-surpriz_review.save!
-favori_review = Review.new(
+
+Review.create!(
   location_id: favori.id,
   comment: "Great Ham & English Cheddar Cheese sandwich.",
   rating: 3,
   user_id: gab.id
   )
-favori_review.save!
-tchai_review = Review.new(
+
+Review.create!(
   location_id: tchai.id,
   comment: "Good value for money.",
   rating: 4,
   user_id: kez.id
   )
-tchai_review.save!
-thai_review = Review.new(
+
+Review.create!(
   location_id: thai.id,
   comment: "Really good Loc Lac.",
   rating: 4,
   user_id: igo.id
   )
-thai_review.save!
+
 puts 'Finished!'

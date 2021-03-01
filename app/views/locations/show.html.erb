@@ -1,8 +1,8 @@
-<div class="">
+<div class="show">
   <% if @location.photo.attached? %>
     <%= cl_image_tag @location.photo.key, class: 'location-image' %>
   <% else %>
-    <%= image_tag 'https://media-cdn.tripadvisor.com/media/photo-s/0d/bf/f1/66/la-fabrica.jpg', class: 'location-image' %>
+    <%= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
   <% end %>
   <div class="container">
 
