@@ -3,13 +3,19 @@ class LocationsController < ApplicationController
     @entity = Entity.find(params[:entity_id])
     @locations = @entity.locations
 
+    if params[:query].present?
+      @locations = @locations.search_by_category(params[:query])
+    else
+      @Locations
+    end
+
     @markers = @locations.geocoded.map do |location|
-      {
-        lat: location.latitude,
-        lng: location.longitude,
-        location_id: location.id,
-        image_url: helpers.asset_url('marker.png')
-      }
+    {
+      lat: location.latitude,
+      lng: location.longitude,
+      location_id: location.id,
+      image_url: helpers.asset_url('marker.png')
+    }
     end
     @entity_marker = {
       lat: @entity.latitude,

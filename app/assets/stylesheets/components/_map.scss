@@ -1,3 +1,12 @@
+  #search-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1000;
+    font-size: 2.45rem;
+    color: $brand-color-dark;
+  }
+
 #map {
   position: relative;
   font-family: $body-font;
