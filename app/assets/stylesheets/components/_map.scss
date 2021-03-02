@@ -1,7 +1,7 @@
   #search-icon {
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 55px;
     z-index: 1000;
     font-size: 2.45rem;
     color: $brand-color-dark;
@@ -41,7 +41,7 @@
   margin-right: 12px;
   margin-left: 12px;
   z-index: 10;
-  height: 90%;
+  height: 70%;
   box-shadow: 3px -1px 15px -3px rgba(0,0,0,0.64);
   overflow: hidden;
   display: flex;
@@ -55,7 +55,7 @@
   }
 
   &.no-event {
-    height: 70%;
+    height: 55%;
 
     .events {
       display: none;
@@ -71,4 +71,11 @@
 
 .marker {
   font-size: 35px;
+}
+
+#location-search-form {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  right: 10px;
 }
