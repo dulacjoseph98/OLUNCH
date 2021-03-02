@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+  include PgSearch::Model
   belongs_to :entity
   has_many :events
   has_many :reviews
@@ -12,6 +13,12 @@ class Location < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   before_save :category_is_bar?
+
+  pg_search_scope :search_by_category,
+    against: [ :category, :name ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
   def today_public_events
     events.where(public: true)
