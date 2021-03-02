@@ -4,11 +4,12 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <% if user_signed_in? %>
       <%# <li class="nav-item dropdown"> %>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar nav-item dropdown", id:"loading" %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar nav-item dropdown", id:"loading" %>
+        <!-- <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar nav-item dropdown", id:"loading" %> -->
       <%# </li> %>
   </button>
-  
-  
+
+
 
   <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -19,11 +20,11 @@
 
         <li class="nav-item">
           <%#= link_to entity_locations_path(current_user.entities.first), class: "nav-link" do %>
-          <%= link_to entity_locations_path(current_entity),  class: "nav-link" do %> 
+          <%= link_to entity_locations_path(current_entity),  class: "nav-link" do %>
           <%# :<button> %>
           <%#= image_tag "map-logo.png", class: "map" %>
           <%# </button> %>
-            <i class="fas fa-map-marked font-size-40px <%= "active" if controller.controller_name == "locations" && controller.action_name == "index" %>"></i> 
+            <i class="fas fa-map-marked font-size-40px <%= "active" if controller.controller_name == "locations" && controller.action_name == "index" %>"></i>
           <% end %>
           <p>Map</p>
         </li>
@@ -44,13 +45,13 @@
 
 
         <li class="nav-item active">
-          <%= link_to root_path, class: "nav-link" do %>          
+          <%= link_to root_path, class: "nav-link" do %>
               <%= cl_image_tag current_entity.photo.key, class: "nav-ent-logo" %>
             <% if current_entity.photo.attached? %>
             <% else %>
               <%= image_tag "https://via.placeholder.com/20", class: "nav-ent-logo" %>
             <% end %>
-            
+
             <%# <i class="fas fa-th-large font-size-40px"></i> %>
           <% end %>
           <%#= current_user.entity %>
