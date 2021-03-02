@@ -20,10 +20,10 @@
         <li class="nav-item active">
           <%#= link_to entity_locations_path(current_user.entities.first), class: "nav-link" do %>
           <%= link_to entity_locations_path(current_entity),  class: "nav-link" do %> 
-          <button>
-          <%= image_tag "map-logo.png", class: "map" %>
-          </button>
-            <%# <i class="fas fa-map-marked b-color font-size-40px"></i> %>
+          <%# :<button> %>
+          <%#= image_tag "map-logo.png", class: "map" %>
+          <%# </button> %>
+            <i class="fas fa-map-marked b-color font-size-40px"></i> 
           <% end %>
           <p>Map</p>
         </li>
@@ -44,12 +44,16 @@
 
 
         <li class="nav-item active">
-          <%= link_to root_path, class: "nav-link" do %>
-          <%= cl_image_tag current_entity.photo.key, class: "nav-ent-logo" %>
+          <%= link_to root_path, class: "nav-link" do %>          
+              <%= cl_image_tag current_entity.photo.key, class: "nav-ent-logo" %>
+            <% if current_entity.photo.attached? %>
+            <% else %>
+              <%= image_tag "https://via.placeholder.com/20", class: "nav-ent-logo" %>
+            <% end %>
+            
             <%# <i class="fas fa-th-large b-color font-size-40px"></i> %>
           <% end %>
           <%#= current_user.entity %>
-      
         </li>
 
       <% else %>
