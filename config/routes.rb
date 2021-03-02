@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'entities#index'
 
-  get "/dashboard", to: "dashboards#dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :entities, only: [:index] do
-      resources :locations, only: [:index, :new, :create]
-      resources :attendees, only: [:index]
+    resources :locations, only: [:index, :new, :create]
+    resources :attendees, only: [:index]
+    # get "/dashboard", to: "dashboards#dashboard"
+    member do 
+      get :dashboard, to: "dashboards#dashboard"
+    end
   end
 
   resources :locations, only: [:show] do
