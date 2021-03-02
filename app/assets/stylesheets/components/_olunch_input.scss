@@ -1,7 +1,8 @@
 .olunch-input {
-  border-color: $brand-color;
+  border-color: $brand-color-dark;
   border-width: 3px;
   text-align: center;
+  text-align-last: center;
 }
 
 .test-label {
@@ -19,7 +20,7 @@
   // border-width: 3px;
   padding: 12px 20px;
   border-radius: 50px;
-  color: $brand-color;
+  color: $brand-color-dark;
   text-align: center;
   margin-left: 0px;
   // margin-right: 60px;
@@ -35,10 +36,16 @@
   }
 
 // if we wherent to remove the focus light blue shadding
-  // input:focus {
-  //   outline-style: none;
-  //   box-shadow: none;
-  //   border-color: $brand-color;
-  //   // border-color: transparent;
-  // }
+  input:focus {
+    outline-style: none;
+    box-shadow: 0 0 0 0.2rem rgba(246, 117, 141, .25);
+    border-color: $brand-color-light;
+    // border-color: transparent;
+  }
+  select:focus {
+    outline-style: none;
+    box-shadow: 0 0 0 0.2rem rgba(246, 117, 141, .25);
+    border-color: $brand-color-light;
+    // border-color: transparent;
+  }
 }

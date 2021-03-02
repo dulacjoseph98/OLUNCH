@@ -228,15 +228,15 @@ surpriz = Location.new(
 surpriz.photo.attach(io: file, filename: 'surpriz.jpg', content_type: 'image/jpg')
 surpriz.save!
 
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
-raftel = Location.new(
-  address: "16 Villa Gaudelet, 75011 Paris",
-  name: "Raftel",
-  category: "Coffee Shop",
-  entity_id: wagon.id
-  )
-raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
-raftel.save!
+# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
+# raftel = Location.new(
+#   address: "16 Villa Gaudelet, 75011 Paris",
+#   name: "Raftel",
+#   category: "Coffee Shop",
+#   entity_id: wagon.id
+#   )
+# raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
+# raftel.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352378/wcu86rkjvcnowbjjzou2.jpg')
 favori = Location.new(

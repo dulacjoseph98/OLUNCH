@@ -31,6 +31,9 @@ const initMapbox = () => {
       markerDiv.style.width = '25px';
       markerDiv.style.height = '40px';
       markerDiv.classList.add('marker');
+      if (marker.has_event) {
+        markerDiv.classList.add('has-event');
+      };
       markerDiv.dataset.locationId = marker.location_id;
 
       // ajouter un eventListener sur le marker (click)
@@ -53,7 +56,7 @@ const initMapbox = () => {
         // .setPopup(popup)
         .addTo(map);
     });
-
+    map.addControl(new mapboxgl.NavigationControl());
 
     const entityMarker = JSON.parse(mapElement.dataset.entityMarker);
     const entityMarkerDiv = document.createElement('div');
@@ -91,5 +94,6 @@ const closeLocationDiv = () => {
     });
   });
 };
+
 
 export { initMapbox };
