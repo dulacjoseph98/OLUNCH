@@ -31,6 +31,7 @@ const initMapbox = () => {
       markerDiv.style.width = '25px';
       markerDiv.style.height = '40px';
       markerDiv.classList.add('marker');
+
       if (marker.has_event) {
         markerDiv.classList.add('has-event');
       };
