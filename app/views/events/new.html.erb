@@ -26,7 +26,7 @@
 
       <div class="link-to fixed-bottom">
         <%= link_to "Back to Map", entity_locations_path(@location.entity), class: "back-btn" %>
-        <%= link_to "My Event Dashboard", dashboard_entity_path, class: "review-btn" %>
+        <%= link_to "My Event Dashboard", dashboard_entity_path(current_user), class: "review-btn" %>
       </div>
 
     <% end %>
