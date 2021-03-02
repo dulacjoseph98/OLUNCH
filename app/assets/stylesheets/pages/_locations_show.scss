@@ -62,13 +62,13 @@
     min-width: 60%;
     padding: 0 10px;
     box-shadow: 3px 6px 10px #d8d8d8;
-    
+
     p {
       font-size: 18px;
       color: #353535;
     }
   }
-  
+
   .fa-beer:before {
     height: 40px;
     size: 40px;
@@ -76,7 +76,7 @@
     color: #efb64d;
     padding-right: 10px;
   }
-  
+
   h3 {
     margin-top: 50px;
     color: $brand-green;
@@ -86,11 +86,11 @@
 #dashboards-dashboard,
 #locations-index {
 
-  
+
   .avatar {
     margin: 0 -5px 0 -5px;
     width: 50px;
-    
+
     &.event-author {
       border: 3px solid #ef8c9e;
     }
@@ -99,7 +99,7 @@
 
 .location-image {
   width: 100%;
-  height: 33vh;
+  height: 50vh;
   // height: 30%;
   object-position: top;
   object-fit: cover;
@@ -199,22 +199,22 @@ span.loc-category {
     height: 64px;
 
   .back-btn {
-    background: #629862;
+    background: $light-gray;
     display: inline-grid;
     padding: 5px 20px;
     border-radius: 25px;
-    color: white;
+    color: $brand-color-dark;
     text-align: center;
     margin-left: 10px;
     margin-right: 0;
   }
 
   .review-btn {
-    background: #5158b9;
+    background: $light-gray;
     display: inline-grid;
     padding: 5px 20px;
     border-radius: 25px;
-    color: white;
+    color: $brand-color-dark;
     text-align: center;
     margin-left: 10px;
     margin-right: 0;
