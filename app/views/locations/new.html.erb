@@ -1,7 +1,11 @@
 <div class="">
-  <%= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
+  <div class="form-header d-flex flex-column justify-content-center" style="background-image: url(<%= image_path('foodvtop.jpg') %>); background-size: cover;">
+    <div class="text-center" class="new-title"><h1>Create a Location</h1></div>
+  </div>
+  <%#= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
+
   <div class="container">
-    <div class="mt-2">
+    <div class="mt-4">
       <%= simple_form_for [@entity, @location] do |f| %>
       <%= f.input :name,
           label: false,
@@ -13,7 +17,8 @@
           input_html: { class: 'olunch-input'} %>
         <div class="row justify-content-center">
           <p>Restaurant</p>
-          <%= f.input :bar, as: :boolean, input_html: { class: "toggle", id: "baronoff" } %>
+          <%= f.input :bar, as: :boolean,
+          input_html: { class: "toggle", id: "baronoff" } %>
         </div>
         <div id="categoryfield">
           <%= f.input :category,
