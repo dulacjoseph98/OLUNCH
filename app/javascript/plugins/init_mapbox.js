@@ -53,7 +53,7 @@ const initMapbox = () => {
         // .setPopup(popup)
         .addTo(map);
     });
-
+    map.addControl(new mapboxgl.NavigationControl());
 
     const entityMarker = JSON.parse(mapElement.dataset.entityMarker);
     const entityMarkerDiv = document.createElement('div');
@@ -91,5 +91,6 @@ const closeLocationDiv = () => {
     });
   });
 };
+
 
 export { initMapbox };

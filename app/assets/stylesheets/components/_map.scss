@@ -32,7 +32,7 @@
   margin-right: 12px;
   margin-left: 12px;
   z-index: 10;
-  height: 70%;
+  height: 90%;
   box-shadow: 3px -1px 15px -3px rgba(0,0,0,0.64);
   overflow: hidden;
   display: flex;
@@ -44,6 +44,14 @@
     height: 130px;
     object-fit: cover;
   }
+
+  &.no-event {
+    height: 70%;
+
+    .events {
+      display: none;
+    }
+  }
 }
 
 
@@ -51,62 +59,6 @@
   bottom: -100%;
 }
 
-.location-show__details {
-  padding: 15px;
-  font-size: 15px;
-  position: relative;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-
-  > div {
-    flex-grow: 1;
-  }
-
-  .button {
-    display: block;
-    background: $brand-color;
-    padding: 12px;
-    border-radius: 50px;
-    color: white;
-    text-align: center;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 40px;
-    box-shadow: $box-shadow;
-  }
-
-  .comment-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-    color: #676767;
-  }
-
-  .present-users {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-
-    .avatar {
-      margin: 0 5px;
-    }
-  }
-
-  .fa-beer:before {
-    height: 40px;
-    size: 40px;
-    font-size: 30px;
-    color: #efb64d;
-    padding-right: 10px;
-  }
-
-  h3 {
-    margin-top: 50px;
-    color: $brand-green;
-  }
-}
 
 .marker {
   font-size: 35px;
