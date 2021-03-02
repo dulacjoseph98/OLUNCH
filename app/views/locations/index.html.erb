@@ -5,7 +5,7 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
   <% @locations.each do |loc| %>
-    <div id="location-<%= loc.id %>" class="location-show location-hide">
+    <div id="location-<%= loc.id %>" class="location-show location-hide <%= "no-event" if loc.today_public_events.count == 0 %>">
       <% if loc.photo.attached? %>
         <%= cl_image_tag loc.photo.key, class: 'location-image' %>
       <% else %>
@@ -13,27 +13,56 @@
       <% end %>
 
       <div class="location-show__details">
+
         <div class="infos-loca">
           <h2><%= loc.name %></h2>
-          <%= loc.address %>
-          <%= link_to location_path(loc), class: "comment-btn" do  %>
-            <i class="fas fa-comment-dots"></i>
-          <% end %>
-          <% loc.today_public_events.each do |event| %>
-            <h3>Public events at <%= loc.name %> :</h3>
-            <div class = "present-users">
-              <i class="fas fa-beer"></i>
-              <% event.users.each do |user| %>
-                <% if user.photo.attached? %>
-                  <%= cl_image_tag user.photo.key, class: 'avatar' %>
-                <% else %>
-                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-                <% end %>
-              <%= link_to "join", event_attendees_path(event), class:"button_join", method: :post %>
-              <% end %>
-            </div>
-          <% end %>
+
+          <span class="loc-category"><%= loc.category %></span>
         </div>
+          <span class="loc-address"><%= loc.address %></span>
+
+          <div class="location-avg-review">
+            <% loc.average_rating.times do  %>
+              <i class="fas fa-star"></i>
+            <% end %>
+
+            <%= link_to 'See reviews...', location_path(loc) %>
+          </div>
+
+          <h5 class="events-nb"><%= loc.today_public_events.count %> events today</h5>
+          <% if loc.today_public_events.count == 0 %>
+          <p class="mb-0">Be the first !</p>
+          <% end %>
+          <div class="events">
+
+            <% loc.today_public_events.each do |event| %>
+              <div class = "present-users">
+                <!-- <i class="fas fa-beer"></i> -->
+                <p><%= event.start_at.strftime("%kh%M") %></p>
+                <div class="participants">
+                  <% if event.user.photo.attached? %>
+                    <%= cl_image_tag event.user.photo.key, class: 'avatar event-author' %>
+                  <% else %>
+                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+                  <% end %>
+
+                  <% event.users.each do |user| %>
+                    <% if user.photo.attached? %>
+                      <%= cl_image_tag user.photo.key, class: 'avatar' %>
+                    <% else %>
+                      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+                    <% end %>
+                  <% end %>
+                </div>
+
+                <% unless event.users.include?(current_user) || event.user == current_user %>
+                  <%= link_to "join", event_attendees_path(event), class:"button_join", method: :post %>
+                <% end %>
+
+              </div>
+
+            <% end %>
+          </div>
         <%= link_to 'Create an Event', new_location_event_path(loc), class: "button" %>
       </div>
     </div>
