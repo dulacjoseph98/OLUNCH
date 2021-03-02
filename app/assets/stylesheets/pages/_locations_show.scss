@@ -62,22 +62,13 @@
     min-width: 60%;
     padding: 0 10px;
     box-shadow: 3px 6px 10px #d8d8d8;
-
-    .avatar {
-      margin: 0 -5px 0 -5px;
-      width: 50px;
-
-      &.event-author {
-        border: 3px solid #ef8c9e;
-      }
-    }
-
+    
     p {
       font-size: 18px;
       color: #353535;
     }
   }
-
+  
   .fa-beer:before {
     height: 40px;
     size: 40px;
@@ -85,10 +76,24 @@
     color: #efb64d;
     padding-right: 10px;
   }
-
+  
   h3 {
     margin-top: 50px;
     color: $brand-green;
+  }
+}
+
+#dashboards-dashboard,
+#locations-index {
+
+  
+  .avatar {
+    margin: 0 -5px 0 -5px;
+    width: 50px;
+    
+    &.event-author {
+      border: 3px solid #ef8c9e;
+    }
   }
 }
 
