@@ -7,7 +7,12 @@
     <div class="entities">
       <% @entities.each do |entity| %>
         <%= link_to entity_locations_path(entity) do %>
+
+        <% if entity.photo.present? %>
           <%= cl_image_tag entity.photo.key, class: 'entity-avatar' %>
+        <% else %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "entity-avatar" %>
+        <% end %>
           <p><%= entity.name %></p>
         <% end %>
       <% end %>
