@@ -8,9 +8,11 @@ class LocationsController < ApplicationController
         lat: location.latitude,
         lng: location.longitude,
         location_id: location.id,
-        image_url: helpers.asset_url('marker.png')
+        image_url: location.bar? ? helpers.asset_url('drink.png') : helpers.asset_url('meal.png'),
+        is_bar: location.bar
       }
     end
+
     @entity_marker = {
       lat: @entity.latitude,
       lng: @entity.longitude,
@@ -44,6 +46,6 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:name, :address, :category, :photo)
+    params.require(:location).permit(:name, :address, :category, :photo, :bar)
   end
 end
