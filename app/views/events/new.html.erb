@@ -1,34 +1,45 @@
-<div class="container">
-  <div class="mt-2">
-    <div class="form-header d-flex flex-column justify-content-center">
-      <div class="text-center">Welcome to the Party</div>
+<div class="">
+  <% if @location.photo.attached? %>
+    <div class="form-header d-flex flex-column justify-content-center" style="background-image: url(<%= cl_image_path @location.photo.key %>); background-size: cover;">
+      <div class="text-center" class="new-title"><h1>Create an Event</h1></div>
     </div>
+    <%#= cl_image_tag @location.photo.key, class: 'location-image' %>
+  <% else %>
+    <div class="form-header d-flex flex-column justify-content-center" style="background-image: url(<%= image_path('foodvtop.jpg') %>); background-size: cover;">
+      <div class="text-center" class="new-title"><h1>Create an Event</h1></div>
+    </div>
+    <%#= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
+  <% end %>
+  <div class="container">
+    <div class="mt-4">
 
-    <%= simple_form_for [@location, @event] do |f| %>
+      <%= simple_form_for [@location, @event] do |f| %>
+        <div class="row justify-content-center">
+          <p>Private</p>
+          <%= f.input :public, as: :boolean,
+          input_html: { class: "toggle", id: "public-btn" } %>
+        </div>
 
-      <%= f.input :public, as: :boolean,
-      input_html: { class: "toggle", id: "public-btn" } %>
-
-      <span id="invitation">
-        <%= simple_fields_for :invitations do |x| %>
-          <%= x.input :attendees,
-          collection: User.all.map { |user| ["#{user.firstname} #{user.lastname}", user.id]},
-          input_html: { class: "select2", multiple: true } %>
-        <% end %>
-      </span>
-      <%= f.input :start_at,
-      label: "Event Time",
-      as: :string,
-      input_html: { class: 'datepicker' } %>
-      <%= f.submit "Create Event", class: "button-green" %>
+        <span id="invitation">
+          <%= simple_fields_for :invitations do |x| %>
+            <%= x.input :attendees,
+            collection: User.all.map { |user| ["#{user.firstname} #{user.lastname}", user.id]},
+            input_html: { class: "select2", multiple: true } %>
+          <% end %>
+        </span>
+        <%= f.input :start_at,
+        label: "Event Time",
+        as: :string,
+        input_html: { class: 'datepicker' } %>
+        <%= f.submit "Create Event", class: "button-green" %>
 
 
-      <div class="link-to fixed-bottom">
-        <%= link_to "Back", entity_locations_path(@location.entity), class: "back-btn" %>
-        <%= link_to "My Events", dashboard_entity_path(current_user), class: "review-btn" %>
-      </div>
+        <div class="link-to fixed-bottom">
+          <%= link_to "Back", entity_locations_path(@location.entity), class: "back-btn" %>
+          <%= link_to "My Events", dashboard_entity_path(current_user), class: "review-btn" %>
+        </div>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
