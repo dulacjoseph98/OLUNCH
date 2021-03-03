@@ -46,7 +46,7 @@ i.active {
   animation: slide 0.95s forwards;
   width: 100px;
   box-shadow: 1px 0px 20px #bfbfbf;
-   
+
   .fa-home:before {
     font-size: 40px;
   }
@@ -74,22 +74,25 @@ i.active {
 // .fa-plus-square {
   //   font-size: 40px;
   // }
-    
+
 li.nav-item {
   text-align: center;
 }
 
-// avatar animation css 
+#loading {
+  object-fit: cover;
+}
+// avatar animation css
 .loading {
-  animation: rotation 0.95s linear;
+  // animation: rotation 0.95s linear;
 }
 
 .navbar-collapse:not(.show) {
-  animation: backslide 0.95s forwards;   
+  animation: backslide 0.95s forwards;
   display: block;
 }
 .navbar-collapse.show {
-  animation: slide 0.95s forwards;   
+  animation: slide 0.95s forwards;
 }
 
 
