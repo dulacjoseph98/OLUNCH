@@ -37,7 +37,7 @@
             <%= link_to 'See reviews...', location_path(loc) %>
           </div>
 
-          <h5 class="events-nb"><%= loc.today_public_events.count %> events today</h5>
+          <h5 class="events-nb"><%= loc.today_public_events.count %> <%= "event".pluralize(loc.today_public_events.count) %> today</h5>
           <% if loc.today_public_events.count == 0 %>
           <p class="mb-0">Be the first !</p>
           <% end %>
@@ -71,7 +71,7 @@
 
             <% end %>
           </div>
-        <%= link_to 'Create an Event', new_location_event_path(loc), class: "button" %>
+        <%= link_to 'Create Event', new_location_event_path(loc), class: "button" %>
       </div>
     </div>
   <% end %>

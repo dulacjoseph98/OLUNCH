@@ -1,6 +1,6 @@
 .olunch-input {
-  border-color: $brand-color-dark;
-  border-width: 3px;
+  // border-color: $brand-color-dark;
+  // border-width: 3px;
   text-align: center;
   text-align-last: center;
 }
@@ -28,6 +28,11 @@
   &:hover {
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
+}
+
+.new-title {
+  font-size: 2rem;
+  font-color: $light-gray;
 }
 
 #new_location {

@@ -119,10 +119,10 @@
 
 .location-cat {
   flex: 0 0 auto;
-  background:  #48a28f;
+  background: #e3ecfd;
   padding: 5px 20px;
-  border-radius: 2px;
-  color: white;
+  border-radius: 6px;
+  color: #003392;
 }
 
 span.loc-address {
@@ -207,19 +207,39 @@ span.loc-category {
     text-align: center;
     margin-left: 10px;
     margin-right: 0;
+    box-shadow: $box-shadow;
   }
 
-  .review-btn {
-    background: $light-gray;
-    display: inline-grid;
-    padding: 5px 20px;
-    border-radius: 25px;
-    color: $brand-color-dark;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 0;
+  // .review-btn {
+  //   background: $light-gray;
+  //   display: inline-grid;
+  //   padding: 5px 20px;
+  //   border-radius: 25px;
+  //   color: $brand-color-dark;
+  //   text-align: center;
+  //   margin-left: 10px;
+  //   margin-right: 0;
+  // }
+    .review-btn {
+      display: block;
+      background: $brand-color;
+      border: none;
+      display: inline-grid;
+      padding: 5px 20px;
+      border-radius: 25px;
+      color: white;
+      text-align: center;
+      margin: auto;
+      margin-left: 10px;
+      margin-right: 0;
+      box-shadow: $box-shadow;
+      &:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        text-decoration: none;
+      }
   }
 }
+
 .location-reviews {
   margin-bottom: 74px;
 }

@@ -1,8 +1,8 @@
 <div class="container pt-5 mt-4 pb-5">
-  <h1>My Events</h1>
+  <h1>My <%= "Event".pluralize(@events.count) %></h1>
   <div class="container-dash">
 
-   <h2>Upcoming events...</h2>
+   <h2>Upcoming <%= "event".pluralize(@events.count) %>...</h2>
     <% @events.each do |event| %>
       <div class="card-event">
         <div class="card-time">
