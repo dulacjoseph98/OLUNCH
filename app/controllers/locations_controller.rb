@@ -32,7 +32,6 @@ class LocationsController < ApplicationController
   def new
     @location = Location.new
     @entity = Entity.find(params[:entity_id])
-    # raise
   end
 
   def create
