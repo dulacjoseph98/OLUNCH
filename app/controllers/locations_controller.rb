@@ -11,13 +11,26 @@ class LocationsController < ApplicationController
 
     @markers = @locations.geocoded.map do |location|
 
-      {
-        lat: location.latitude,
-        lng: location.longitude,
-        location_id: location.id,
-        image_url: location.bar? ? helpers.asset_url('drink.png') : helpers.asset_url('meal.png'),
-        has_event: location.today_public_events.present?
-      }
+      if location.bar?
+        if location.today_public_events.present?
+          image_url = 'marker-beer-event.png'
+        else
+          image_url = 'marker-beer.png'
+        end
+      else
+        if location.today_public_events.present?
+          image_url = 'marker-food-event.png'
+        else
+          image_url = 'marker-food.png'
+        end
+      end
+
+    {
+      lat: location.latitude,
+      lng: location.longitude,
+      location_id: location.id,
+      image_url: helpers.asset_url(image_url)
+    }
     end
 
     @entity_marker = {

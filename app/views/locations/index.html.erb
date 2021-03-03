@@ -1,41 +1,16 @@
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="fas fa-search-location" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> -->
-<%= link_to "#", id: "search-icon", data: { toggle: "modal", target: "#exampleModal" } do %><i class="fas fa-search-location"></i><% end %>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= form_tag entity_locations_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search a category"
-          %>
-      </div>
-      <div class="modal-footer">
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      </div>
-        <% end %>
-    </div>
-  </div>
-</div>
-
-
 <div id="map"
      style="width: 100%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-entity-marker="<%= @entity_marker.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  <%= form_tag entity_locations_path, method: :get, id: "location-search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Asian, ..."
+    %>
+  <% end %>
 
   <% @locations.each do |loc| %>
     <div id="location-<%= loc.id %>" class="location-show location-hide <%= "no-event" if loc.today_public_events.count == 0 %>">
@@ -62,7 +37,7 @@
             <%= link_to 'See reviews...', location_path(loc) %>
           </div>
 
-          <h5 class="events-nb"><%= loc.today_public_events.count %> events today</h5>
+          <h5 class="events-nb"><%= loc.today_public_events.count %> <%= "event".pluralize(loc.today_public_events.count) %> today</h5>
           <% if loc.today_public_events.count == 0 %>
           <p class="mb-0">Be the first !</p>
           <% end %>
@@ -96,7 +71,7 @@
 
             <% end %>
           </div>
-        <%= link_to 'Create an Event', new_location_event_path(loc), class: "button" %>
+        <%= link_to 'Create Event', new_location_event_path(loc), class: "button" %>
       </div>
     </div>
   <% end %>

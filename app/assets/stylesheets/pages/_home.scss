@@ -61,9 +61,17 @@
 
 body#entities-index {
   // background: linear-gradient(149deg, rgba(26,56,26,1) 18%, rgba(98,152,98,1) 77%);
-  background: image-url("food.png");
+  background: image-url("food.jpg");
   // background: url("https://img.freepik.com/free-photo/top-view-vegetable-composition-onions-garlics-peppers-greens-dark-background-seasoning-pepper-food-product-color_140725-31050.jpg?size=626&ext=jpg");
   background-size: cover;
   background-position: center right;
   min-height: 100vh;
+}
+
+.logo {
+  margin-left: 28%;
+  margin-top: 40%;
+  padding-bottom: 75px;
+  height: 45%;
+  width: 45%;
 }

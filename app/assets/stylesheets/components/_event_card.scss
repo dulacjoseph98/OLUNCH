@@ -14,34 +14,22 @@
 }
 
 .card-event {
-  // padding: 55px;
-  // overflow: hidden;
-  // height: 120px;
-  background: #ffffff;
-  box-shadow: 0  0 8px #629862;
-  // display: flex;
-  // align-items: center;
-  border-radius: 30px;
-  margin-right: 5px;
-  margin-left: 5px;
-  // justify-content: center;
-  margin-top: 15px;
   display: flex;
-  min-height: 20vh;
-
-
+  justify-content: center;
+  align-items: center;
+  background: #efefef;
+  border-radius: 4px;
+  min-width: 60%;
+  padding: 0 10px;
+  box-shadow: 3px 6px 10px #d8d8d8;
+  margin-bottom: 25px;
+  padding: 10px;
+  .avatar{
+    height: 50px;
+    width: 50px;
+  }
 }
 
-.card-info-avatar{
-  border-radius: 50%;
-  height: 75%;
-  margin-left: 2px;
-}
-
-.card-info-avatar-user {
-  border-radius: 50%;
-  width: 100%;
-}
 
 .card-info {
   text-align: center;
@@ -49,13 +37,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-left: 10px;
+  border-left: 1px solid #c3c3c3;
   p {
     margin-bottom: 5px;
   }
 }
 
 .card-time {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   justify-content: center;
   width: 33%;
@@ -85,21 +75,21 @@
   height: 40%;
   // padding-bottom: 3px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 .card-info-top-left {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-
-
+  text-align: left;
+  p:first-child {
+    font-weight: 600;
+  }
 }
 
 .card-info-top-right {
 
   width: 20%;
+}
+
+.validates a {
+  font-size: 27px;
 }

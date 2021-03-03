@@ -1,6 +1,6 @@
 .olunch-input {
-  border-color: $brand-color-dark;
-  border-width: 3px;
+  // border-color: $brand-color-dark;
+  // border-width: 3px;
   text-align: center;
   text-align-last: center;
 }
@@ -30,22 +30,54 @@
   }
 }
 
+.new-title {
+  font-size: 2rem;
+  color: white;
+  h1 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  }
+}
+
 #new_location {
   .form-check {
     padding-left: .5rem;
   }
 
-// if we wherent to remove the focus light blue shadding
+// if we want to remove the focus uncomment the transparent
   input:focus {
     outline-style: none;
-    box-shadow: 0 0 0 0.2rem rgba(246, 117, 141, .25);
-    border-color: $brand-color-light;
+    box-shadow: 0 0 0 0.2rem $light-blue;
+    border-color: $dark-blue;
     // border-color: transparent;
   }
   select:focus {
     outline-style: none;
-    box-shadow: 0 0 0 0.2rem rgba(246, 117, 141, .25);
-    border-color: $brand-color-light;
+    box-shadow: 0 0 0 0.2rem $light-blue;
+    border-color: $dark-blue;
     // border-color: transparent;
   }
+}
+
+#new_event {
+  .form-check {
+    padding-left: .5rem;
+  }
+
+// if we want to remove the focus uncomment the transparent
+  input:focus {
+    outline-style: none;
+    box-shadow: 0 0 0 0.2rem $light-blue;
+    border-color: $dark-blue;
+    // border-color: transparent;
+  }
+  select:focus {
+    outline-style: none;
+    box-shadow: 0 0 0 0.2rem $light-blue;
+    border-color: $dark-blue;
+    // border-color: transparent;
+  }
+}
+
+#locations-new .location-image {
+    object-position: bottom;
 }

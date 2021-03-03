@@ -1,13 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <% if user_signed_in? %>
-      <%# <li class="nav-item dropdown"> %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar nav-item dropdown", id:"loading" %>
-        <!-- <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar nav-item dropdown", id:"loading" %> -->
-      <%# </li> %>
-  </button>
+  <% if user_signed_in? %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <%= cl_image_tag current_entity.photo.key, width: 50, height: 50, class: "avatar nav-item dropdown", id:"loading" %>
+    </button>
+
 
 
 
@@ -15,30 +13,26 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
-
-
-
-        <li class="nav-item active">
-          <%#= link_to entity_locations_path(current_user.entities.first), class: "nav-link" do %>
+        <li class="nav-item">
           <%= link_to entity_locations_path(current_entity),  class: "nav-link" do %>
-          <%# :<button> %>
-          <%#= image_tag "map-logo.png", class: "map" %>
-          <%# </button> %>
-            <i class="fas fa-map-marked b-color font-size-40px"></i>
+            <i class="fas fa-map-marked font-size-40px <%= "active" if controller.controller_name == "locations" && controller.action_name == "index" %>"></i>
           <% end %>
           <p>Map</p>
         </li>
 
         <li class="nav-item">
-          <%= link_to dashboard_entity_path(current_entity), class: "nav-link" do %>
-            <i class="fas fa-calendar-day b-color font-size-40px"></i>
-          <% end %>
-          <p>Events</p>
+          <div class="events-upcoming">
+            <%= link_to dashboard_entity_path(current_entity), class: "nav-link" do %>
+              <i class="fas fa-calendar-day font-size-40px <%= "active" if controller.controller_name == "dashboards" && controller.action_name == "dashboard" %>"></i>
+            <% end %>
+            <p>Events</p>
+            <div class="events-upcoming-picto"><%= current_user.pending_events_as_attendee.count + current_user.accepted_events_as_attendee.count + current_user.events.distinct.count %></div>
+          </div>
         </li>
 
         <li class="nav-item">
           <%= link_to new_entity_location_path(current_entity), class: "nav-link" do %>
-            <i class="fas fa-calendar-plus b-color font-size-40px"></i>
+            <i class="fas fa-calendar-plus font-size-40px <%= "active" if controller.controller_name == "locations" && controller.action_name == "new" %>"></i>
           <% end %>
           <p>Create Location</p>
         </li>
@@ -46,27 +40,29 @@
 
         <li class="nav-item active">
           <%= link_to root_path, class: "nav-link" do %>
-              <%= cl_image_tag current_entity.photo.key, class: "nav-ent-logo" %>
-            <% if current_entity.photo.attached? %>
-            <% else %>
-              <%= image_tag "https://via.placeholder.com/20", class: "nav-ent-logo" %>
-            <% end %>
-
-            <%# <i class="fas fa-th-large b-color font-size-40px"></i> %>
+            <i class="fas fa-th-large font-size-40px"></i>
+            <p>Entities</p>
           <% end %>
-          <%#= current_user.entity %>
         </li>
+
+      <div class="log-out">
+        <%= link_to destroy_user_session_path, method: :delete, class: "d-block text-center" do %>
+          <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+        <p>Log out</p>
+      </div>
 
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
+
     </ul>
   </div>
   <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
-      <% end %>
+  <% end %>
+
 </div>

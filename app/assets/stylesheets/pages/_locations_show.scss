@@ -63,15 +63,6 @@
     padding: 0 10px;
     box-shadow: 3px 6px 10px #d8d8d8;
 
-    .avatar {
-      margin: 0 -5px 0 -5px;
-      width: 50px;
-
-      &.event-author {
-        border: 3px solid #ef8c9e;
-      }
-    }
-
     p {
       font-size: 18px;
       color: #353535;
@@ -92,9 +83,23 @@
   }
 }
 
+#dashboards-dashboard,
+#locations-index {
+
+
+  .avatar {
+    margin: 0 -5px 0 -5px;
+    width: 50px;
+
+    &.event-author {
+      border: 3px solid #ef8c9e;
+    }
+  }
+}
+
 .location-image {
   width: 100%;
-  height: 33vh;
+  height: 50vh;
   // height: 30%;
   object-position: top;
   object-fit: cover;
@@ -114,10 +119,10 @@
 
 .location-cat {
   flex: 0 0 auto;
-  background:  #48a28f;
+  background: #e3ecfd;
   padding: 5px 20px;
-  border-radius: 2px;
-  color: white;
+  border-radius: 6px;
+  color: #003392;
 }
 
 span.loc-address {
@@ -194,27 +199,47 @@ span.loc-category {
     height: 64px;
 
   .back-btn {
-    background: #629862;
+    background: $light-gray;
     display: inline-grid;
     padding: 5px 20px;
     border-radius: 25px;
-    color: white;
+    color: $brand-color-dark;
     text-align: center;
     margin-left: 10px;
     margin-right: 0;
+    box-shadow: $box-shadow;
   }
 
-  .review-btn {
-    background: #5158b9;
-    display: inline-grid;
-    padding: 5px 20px;
-    border-radius: 25px;
-    color: white;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 0;
+  // .review-btn {
+  //   background: $light-gray;
+  //   display: inline-grid;
+  //   padding: 5px 20px;
+  //   border-radius: 25px;
+  //   color: $brand-color-dark;
+  //   text-align: center;
+  //   margin-left: 10px;
+  //   margin-right: 0;
+  // }
+    .review-btn {
+      display: block;
+      background: $brand-color;
+      border: none;
+      display: inline-grid;
+      padding: 5px 20px;
+      border-radius: 25px;
+      color: white;
+      text-align: center;
+      margin: auto;
+      margin-left: 10px;
+      margin-right: 0;
+      box-shadow: $box-shadow;
+      &:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        text-decoration: none;
+      }
   }
 }
+
 .location-reviews {
   margin-bottom: 74px;
 }

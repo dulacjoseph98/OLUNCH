@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       params[:invitations][:attendees].reject(&:blank?).each do |attendee_id|
         Attendee.create(user: User.find(attendee_id.to_i), event: @event)
       end
-      redirect_to entity_locations_path(@location.entity)
+      redirect_to dashboard_entity_path(@location.entity)
     else
       render :new
     end

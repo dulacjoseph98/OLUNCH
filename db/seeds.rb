@@ -265,13 +265,14 @@ alicheur = Location.new(
   )
 alicheur.photo.attach(io: file, filename: 'alicheur.jpg', content_type: 'image/jpg')
 alicheur.save!
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614615478/ll7op7jbnw25wf0xqkah.png')
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614615478/ll7op7jbnw25wf0xqkah.jpg')
 thai = Location.new(
   address: "121 rue Oberkampf, 75011 Paris",
   name: "Thai Wok House",
   category: "Asian",
   entity_id: wagon.id
   )
+thai.photo.attach(io: file, filename: 'thai.jpg', content_type: 'image/jpg')
 thai.save!
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614351804/qy62ky380bbeptoijunq.jpg')
 jbun = Location.new(
@@ -336,6 +337,7 @@ brigade = Location.new(
   category: "Bistrot",
   entity_id: wagon.id
   )
+brigade.photo.attach(io: file, filename: 'brigade.jpg', content_type: 'image/jpg')
 brigade.save!
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352093/p42phpta6mddrndpmikq.jpg')
 phenicien = Location.new(
@@ -350,7 +352,7 @@ file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352081/b
 bocamexa = Location.new(
   address: "95 Rue Oberkampf, 75011 Paris",
   name: "Bocamexa",
-  category: "Lebanese",
+  category: "Mexican",
   entity_id: wagon.id
   )
 bocamexa.photo.attach(io: file, filename: 'bocamexa.jpg', content_type: 'image/jpg')
