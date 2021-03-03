@@ -1,8 +1,8 @@
 <div class="container pt-5 mt-4 pb-5">
-  <h1>My Events</h1>
+  <h1>My <%= "Event".pluralize(@events.count) %></h1>
   <div class="container-dash">
 
-   <h2>Upcoming events...</h2>
+   <h2>Upcoming <%= "event".pluralize(@events.count) %>...</h2>
     <% @events.each do |event| %>
       <div class="card-event">
         <div class="card-time">
@@ -23,7 +23,7 @@
               <%= image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fdefault-avatar.html&psig=AOvVaw3Pen1uUAI0Fk7bA5_3oCW9&ust=1614766126558000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCP_Nyuke8CFQAAAAAdAAAAABAD", class: "card-info-avatar" %>
             <% end %>
             <% event.users_as_attendees.each do |attendee| %>
-              
+
               <% if attendee.photo.attached? %>
                 <%= cl_image_tag attendee.photo.key, alttext: "avatar", class: "avatar" %>
               <% else %>
@@ -37,7 +37,7 @@
     <% end %>
      <br><br>
     <h2>Waiting for your answer</h2>
-    
+
     <% if  @pending_events.present? %>
       <% @pending_events.each do |event| %>
       <div class="card-event">
@@ -63,7 +63,7 @@
               <%= image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fdefault-avatar.html&psig=AOvVaw3Pen1uUAI0Fk7bA5_3oCW9&ust=1614766126558000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCP_Nyuke8CFQAAAAAdAAAAABAD", class: "card-info-avatar" %>
             <% end %>
             <% event.users_as_attendees.each do |attendee| %>
-              
+
               <% if attendee.photo.attached? %>
                 <%= cl_image_tag attendee.photo.key, alttext: "avatar", class: "avatar" %>
               <% else %>
@@ -79,9 +79,9 @@
     <% else %>
       <p id="anim-pop">Nobody likes you... 😓</p>
     <% end %>
-    
-   
-   
+
+
+
   </div>
 </div>
 
