@@ -1,7 +1,7 @@
 <div class="">
   <% if @location.photo.attached? %>
-    <div class="form-header d-flex flex-column justify-content-center" style="background-image: url(<%= cl_image_path @location.photo.key %>); background-size: cover;">
-      <div class="text-center">
+    <div class="form-header d-flex flex-column justify-content-center" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%), url(<%= cl_image_path @location.photo.key %>); background-size: cover;">
+      <div class="text-center new-title">
         <h1><%= @location.name %></h1>
       </div>
     </div>
@@ -37,7 +37,7 @@
         label: "Event Time",
         as: :string,
         input_html: { class: 'datepicker' } %>
-        <%= f.submit "Create Event", class: "button-green" %>
+        <%= f.submit "Create", class: "button-green" %>
 
 
         <div class="link-to fixed-bottom">
