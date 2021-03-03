@@ -26,7 +26,9 @@
               <i class="fas fa-calendar-day font-size-40px <%= "active" if controller.controller_name == "dashboards" && controller.action_name == "dashboard" %>"></i>
             <% end %>
             <p>Events</p>
-            <div class="events-upcoming-picto"><%= current_user.pending_events_as_attendee.count + current_user.accepted_events_as_attendee.count + current_user.events.distinct.count %></div>
+            <% if current_user.pending_events_as_attendee.count != 0 %>
+              <div class="events-upcoming-picto"><%= current_user.pending_events_as_attendee.count %></div>
+            <% end %>
           </div>
         </li>
 
