@@ -98,9 +98,13 @@ li.nav-item {
   text-align: center;
 }
 
+#loading {
+  object-fit: cover;
+}
+
 // avatar animation css
 .loading {
-  animation: rotation 0.95s linear;
+  // animation: rotation 0.95s linear;
 }
 
 .navbar-collapse:not(.show) {
