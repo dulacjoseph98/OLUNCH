@@ -47,17 +47,25 @@
             <p>Entities</p>
           <% end %>
         </li>
+      <div class="log-out">
+        <%= link_to destroy_user_session_path, method: :delete, class: "d-block text-center" do %>
+          <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+        <p>Log out</p>
+      </div>
 
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
+
     </ul>
   </div>
   <% else %>
           <li class="nav-item">
             <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
-      <% end %>
+  <% end %>
+
 </div>
