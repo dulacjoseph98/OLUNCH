@@ -2,8 +2,7 @@
 
   <div class="home-info">
 
-    <h1>O'LUNCH</h1>
-
+    <%= image_tag "olunch-logo.png", class: "logo" %>
     <div class="entities">
       <% @entities.each do |entity| %>
         <%= link_to entity_locations_path(entity) do %>
