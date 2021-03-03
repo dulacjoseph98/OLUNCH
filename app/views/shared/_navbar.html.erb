@@ -30,10 +30,15 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to dashboard_entity_path(current_entity), class: "nav-link" do %>
-            <i class="fas fa-calendar-day font-size-40px <%= "active" if controller.controller_name == "dashboards" && controller.action_name == "dashboard" %>"></i>
-          <% end %>
-          <p>Events</p>
+          <div class="events-upcoming">
+            <%= link_to dashboard_entity_path(current_entity), class: "nav-link" do %>
+              <i class="fas fa-calendar-day font-size-40px <%= "active" if controller.controller_name == "dashboards" && controller.action_name == "dashboard" %>"></i>
+            <% end %>
+            <p>Events</p>
+            <% if current_user.pending_events_as_attendee.count != 0 %>
+              <div class="events-upcoming-picto"><%= current_user.pending_events_as_attendee.count %></div>
+            <% end %>
+          </div>
         </li>
 
         <li class="nav-item">
