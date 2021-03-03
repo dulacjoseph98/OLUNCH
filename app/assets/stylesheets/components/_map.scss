@@ -47,6 +47,7 @@
   display: flex;
   flex-direction: column;
   transition: bottom 0.3s ease;
+  overflow: scroll;
 
   > img {
     width: 100%;
@@ -70,7 +71,8 @@
 
 
 .marker {
-  font-size: 35px;
+  width: 60px !important;
+  height: 55px !important;
 }
 
 #location-search-form {

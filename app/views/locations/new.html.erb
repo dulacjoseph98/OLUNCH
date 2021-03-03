@@ -1,6 +1,6 @@
 <div class="">
-  <div class="form-header d-flex flex-column justify-content-center" style="background-image: url(<%= image_path('foodvtop.jpg') %>); background-size: cover;">
-    <div class="text-center" class="new-title"><h1>Create a Location</h1></div>
+  <div class="form-header d-flex flex-column justify-content-center" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%), url(<%= image_path('foodvtop.jpg') %>); background-size: cover;">
+    <div class="text-center new-title"><h1>Create a Location</h1></div>
   </div>
   <%#= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
 
@@ -34,7 +34,7 @@
           label: "Upload photo",
           label_html: { class: "photo-upload-label" },
           input_html: { class: "d-none"} %>
-        <%= f.submit "Create Location", class: "button-green" %>
+        <%= f.submit "Create", class: "button-green" %>
       <% end %>
     </div>
   </div>

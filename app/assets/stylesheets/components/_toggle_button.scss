@@ -27,7 +27,7 @@
 }
 
 .toggle:checked + label::before {
-  background-color: $brand-color-light;
+  background-color: $dark-blue;
 }
 
 .toggle + label::after {

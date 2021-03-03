@@ -103,7 +103,7 @@ li.nav-item {
 
 // avatar animation css
 .loading {
-  animation: rotation 0.95s linear;
+  // animation: rotation 0.95s linear;
 }
 
 .navbar-collapse:not(.show) {
@@ -134,3 +134,7 @@ li.nav-item {
   100% { left: -150px; }
 }
 
+.fa-sign-out-alt {
+  font-size: 35px;
+  color: lightgrey;
+}
