@@ -15,7 +15,7 @@
           label: false,
           placeholder: 'Address',
           input_html: { class: 'olunch-input'} %>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="color: #495057;">
           <p>Restaurant</p>
           <%= f.input :bar, as: :boolean,
           input_html: { class: "toggle", id: "baronoff" } %>
@@ -23,7 +23,7 @@
         <div id="categoryfield">
           <%= f.input :category,
            label: false,
-           prompt: 'Select Category:',
+           prompt: 'Select Category',
            collection: ['Asian', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'],
            input_html: { class: "select2", class: 'olunch-input' },
            label_html: { class: "test-label" },
@@ -34,7 +34,7 @@
           label: "Upload photo",
           label_html: { class: "photo-upload-label" },
           input_html: { class: "d-none"} %>
-        <%= f.submit "Create a Location", class: "button-green" %>
+        <%= f.submit "Create Location", class: "button-green" %>
       <% end %>
     </div>
   </div>
