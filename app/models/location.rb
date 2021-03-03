@@ -6,7 +6,7 @@ class Location < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
-  validates :category, presence: true
+  # validates :category, presence: true, if: :bar?
   has_one_attached :photo
 
   geocoded_by :address

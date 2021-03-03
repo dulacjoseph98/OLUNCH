@@ -15,11 +15,12 @@
           label: false,
           placeholder: 'Address',
           input_html: { class: 'olunch-input'} %>
+
         <div class="row justify-content-center" style="color: #495057;">
           <p>Restaurant</p>
-          <%= f.input :bar, as: :boolean,
-          input_html: { class: "toggle", id: "baronoff" } %>
+          <%= f.input :bar, as: :boolean, checked_value: true, unchecked_value: false, input_html: { class: "toggle", id: "baronoff" } %>
         </div>
+
         <div id="categoryfield">
           <%= f.input :category,
            label: false,

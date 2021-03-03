@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
     end
 
     @markers = @locations.geocoded.map do |location|
+
       if location.bar?
         if location.today_public_events.present?
           image_url = 'marker-beer-event.png'
@@ -31,6 +32,7 @@ class LocationsController < ApplicationController
       image_url: helpers.asset_url(image_url)
     }
     end
+
     @entity_marker = {
       lat: @entity.latitude,
       lng: @entity.longitude,
@@ -64,6 +66,6 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:name, :address, :category, :photo)
+    params.require(:location).permit(:name, :address, :category, :photo, :bar)
   end
 end

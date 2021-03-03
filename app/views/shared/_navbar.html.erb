@@ -8,16 +8,13 @@
 
 
 
+
   <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
         <li class="nav-item">
-          <%#= link_to entity_locations_path(current_user.entities.first), class: "nav-link" do %>
           <%= link_to entity_locations_path(current_entity),  class: "nav-link" do %>
-          <%# :<button> %>
-          <%#= image_tag "map-logo.png", class: "map" %>
-          <%# </button> %>
             <i class="fas fa-map-marked font-size-40px <%= "active" if controller.controller_name == "locations" && controller.action_name == "index" %>"></i>
           <% end %>
           <p>Map</p>
@@ -47,6 +44,7 @@
             <p>Entities</p>
           <% end %>
         </li>
+
       <div class="log-out">
         <%= link_to destroy_user_session_path, method: :delete, class: "d-block text-center" do %>
           <i class="fas fa-sign-out-alt"></i>
@@ -64,7 +62,6 @@
   </div>
   <% else %>
           <li class="nav-item">
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
   <% end %>
 
