@@ -2,42 +2,7 @@
   <h1>My <%= "Event".pluralize(@events.count) %></h1>
   <div class="container-dash">
 
-   <h2>Upcoming <%= "event".pluralize(@events.count) %>...</h2>
-    <% @events.each do |event| %>
-      <div class="card-event">
-        <div class="card-time">
-          <p id="time"><%= event.start_at.strftime("%H:%M") %></p>
-          <p id="date"><%= event.start_at.strftime("%b %d, %Y") %></p>
-        </div>
-        <div class="card-info">
-          <div class="card-info-top">
-            <div class="card-info-top-left">
-              <p><%= event.location.name %></p>
-              <p><%= event.location.address %></p>
-              <p>@<%= event.location.entity.name %> :</p>
-            </div>
-          </div>
-          <div class="card-info-bottom">
-            <% if event.user.photo.attached? %>
-              <%= cl_image_tag event.user.photo.key, alttext: "avatar", class: " avatar  event-author" %>
-            <% else %>
-              <%= image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fdefault-avatar.html&psig=AOvVaw3Pen1uUAI0Fk7bA5_3oCW9&ust=1614766126558000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCP_Nyuke8CFQAAAAAdAAAAABAD", class: "card-info-avatar" %>
-            <% end %>
-            <% event.users_as_attendees.each do |attendee| %>
-
-              <% if attendee.photo.attached? %>
-                <%= cl_image_tag attendee.photo.key, alttext: "avatar", class: "avatar" %>
-              <% else %>
-                <%= image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fdefault-avatar.html&psig=AOvVaw3Pen1uUAI0Fk7bA5_3oCW9&ust=1614766126558000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCP_Nyuke8CFQAAAAAdAAAAABAD", class: "card-info-avatar" %>
-              <% end %>
-            <% end %>
-
-          </div>
-        </div>
-      </div>
-    <% end %>
-     <br><br>
-    <h2>Waiting for your answer</h2>
+   <h2>Waiting for your answer</h2>
 
     <% if  @pending_events.present? %>
       <% @pending_events.each do |event| %>
@@ -81,6 +46,42 @@
     <% else %>
       <p id="anim-pop">Nobody likes you... 😓</p>
     <% end %>
+
+   <h2>Upcoming <%= "event".pluralize(@events.count) %>...</h2>
+    <% @events.each do |event| %>
+      <div class="card-event">
+        <div class="card-time">
+          <p id="time"><%= event.start_at.strftime("%H:%M") %></p>
+          <p id="date"><%= event.start_at.strftime("%B %e, %Y") %></p>
+        </div>
+        <div class="card-info">
+          <div class="card-info-top">
+            <div class="card-info-top-left">
+              <p class=><%= event.location.name %></p>
+              <p><%= event.location.address %></p>
+            </div>
+          </div>
+          <div class="card-info-bottom">
+            <% if event.user.photo.attached? %>
+              <%= cl_image_tag event.user.photo.key, alttext: "avatar", class: " avatar  event-author" %>
+            <% else %>
+              <%= image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fdefault-avatar.html&psig=AOvVaw3Pen1uUAI0Fk7bA5_3oCW9&ust=1614766126558000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCP_Nyuke8CFQAAAAAdAAAAABAD", class: "card-info-avatar" %>
+            <% end %>
+            <% event.users_as_attendees.each do |attendee| %>
+
+              <% if attendee.photo.attached? %>
+                <%= cl_image_tag attendee.photo.key, alttext: "avatar", class: "avatar" %>
+              <% else %>
+                <%= image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fdefault-avatar.html&psig=AOvVaw3Pen1uUAI0Fk7bA5_3oCW9&ust=1614766126558000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCP_Nyuke8CFQAAAAAdAAAAABAD", class: "card-info-avatar" %>
+              <% end %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+     <br><br>
+   
 
 
 
