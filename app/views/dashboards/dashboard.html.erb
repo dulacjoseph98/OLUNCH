@@ -1,25 +1,27 @@
 <div class="container pt-5 mt-4 pb-5">
-  <h1>My <%= "Event".pluralize(@events.count) %></h1>
-  <div class="container-dash">
-
-   <h2>Waiting for your answer</h2>
-
-    <% if  @pending_events.present? %>
-      <% @pending_events.each do |event| %>
+  <h1 id="events">My <%= "Events".pluralize(@events.count) %></h1>
+  <div class="container-dash mb-5">
+    <% if @pending_events.present? %>
+   <h4 class="mb-3">Waiting for your answer:</h4>
+    <% @pending_events.each do |event| %>
       <div class="card-event">
         <div class="card-time">
           <p id="time"><%= event.start_at.strftime("%H:%M") %></p>
           <p id="date"><%= event.start_at.strftime("%b %d, %Y") %></p>
 
           <div class="validates">
-            <%= link_to "❌", decline_attendee_path(event.attendees.find_by(user_id: current_user.id)), class: "decline"%>
-            <%= link_to "✅", accept_attendee_path(event.attendees.find_by(user_id: current_user.id)), class: "accept"%>
+            <%= link_to  decline_attendee_path(event.attendees.find_by(user_id: current_user.id)), class: "decline" do%>
+              <i class="fas fa-times" id="refuse"></i>
+            <% end %>
+            <%= link_to  accept_attendee_path(event.attendees.find_by(user_id: current_user.id)), class: "accept" do%>
+              <i class="fas fa-check" id="accept"></i>
+            <% end %>
           </div>
         </div>
         <div class="card-info">
           <div class="card-info-top">
             <div class="card-info-top-left">
-              <p><%= event.location.name %></p>
+              <p class="location-name"><%= event.location.name %></p>
               <p><%= event.location.address %></p>
             </div>
           </div>
@@ -40,14 +42,12 @@
 
           </div>
         </div>
-        </div>
+        
       </div>
       <% end %>
-    <% else %>
-      <p id="anim-pop">Nobody likes you... 😓</p>
     <% end %>
 
-   <h2>Upcoming <%= "event".pluralize(@events.count) %>...</h2>
+   <h4 class="mb-3">Upcoming <%= "event".pluralize(@events.count) %>:</h4>
     <% @events.each do |event| %>
       <div class="card-event">
         <div class="card-time">
@@ -57,7 +57,7 @@
         <div class="card-info">
           <div class="card-info-top">
             <div class="card-info-top-left">
-              <p class=><%= event.location.name %></p>
+              <p class="location-name"><%= event.location.name %></p>
               <p><%= event.location.address %></p>
             </div>
           </div>
