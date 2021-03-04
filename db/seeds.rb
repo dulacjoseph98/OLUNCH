@@ -15,11 +15,11 @@ puts 'Finished'
 # creation of data in the tables starting with those with no dependencies
 puts 'Creating entities...'
 jojobande = Entity.new(
-  address: "Unit 22 Tooley St, London SE1 2HD, Royaume-Uni",
-  name: "Joseph's crew"
+  address: "Emirates Stadium, 7AJ Hornsey Rd, London N7 7AJ, United Kingdom",
+  name: "Footclub"
   )
-file = URI.open('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614786328/lv9pxubcuzbnfvaeo68x.jpg')
-jojobande.photo.attach(io: file, filename: 'jojo.jpg', content_type: 'image/jpg')
+file = URI.open('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614874381/cdgflb38jfijmiggqjlb.png')
+jojobande.photo.attach(io: file, filename: 'arsenal.png', content_type: 'image/png')
 jojobande.save!
 
 
@@ -201,16 +201,6 @@ puts 'Finished!'
 # Asian, Bistrot, Burger, Kebab, Coffee Shop, Hawaiian, Health, Lebanese, Mexican, Pizza, Sandwich, Supermarket, Sushi
 
 puts 'Creating locations...'
-file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614596772/yqrxpq0ydvuozt9ya4gz.jpg')
-barracao = Location.new(
-  address: "104 Rue Oberkampf, 75011 Paris",
-  name: "Barracao",
-  category: "Bar",
-  bar: true,
-  entity_id: wagon.id
-  )
-barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
-barracao.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346845/julihkwh5xovuoe7suqs.jpg')
 surpriz = Location.new(
@@ -222,15 +212,6 @@ surpriz = Location.new(
 surpriz.photo.attach(io: file, filename: 'surpriz.jpg', content_type: 'image/jpg')
 surpriz.save!
 
-# file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614346974/t4hopi5pjxyrrvztjbdk.jpg')
-# raftel = Location.new(
-#   address: "16 Villa Gaudelet, 75011 Paris",
-#   name: "Raftel",
-#   category: "Coffee Shop",
-#   entity_id: wagon.id
-#   )
-# raftel.photo.attach(io: file, filename: 'raftel.jpg', content_type: 'image/jpg')
-# raftel.save!
 
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352378/wcu86rkjvcnowbjjzou2.jpg')
 favori = Location.new(
@@ -356,7 +337,7 @@ lunch_two = Event.new(
 lunch_two.save!
 
 lunch_three = Event.new(
-  location_id: barracao.id,
+  location_id: murphy.id,
   user_id: gab.id,
   start_at: Time.strptime('03/08/2021 22:30', '%m/%d/%Y %H:%M'),
   public: false,
@@ -365,7 +346,7 @@ lunch_three = Event.new(
 lunch_three.save!
 
 lunch_public = Event.new(
-  location_id: barracao.id,
+  location_id: murphy.id,
   user_id: philou.id,
   start_at: Time.strptime('03/05/2021 20:30', '%m/%d/%Y %H:%M'),
   public: true,
@@ -437,13 +418,6 @@ lunch_public_attendee_two.save!
 puts 'Finished!'
 
 puts 'Creating reviews...'
-
-Review.create!(
-  location_id: barracao.id,
-  comment: "Take away beer does the trick.",
-  rating: 4,
-  user_id: jo.id
-  )
 
 Review.create!(
   location_id: bocamexa.id,
@@ -528,4 +502,17 @@ Review.create!(
   user_id: tom.id
   )
 
+Review.create!(
+  location_id: murphy.id,
+  comment: "2,5€ the beer for wagon TAs :)",
+  rating: 4,
+  user_id: tom.id
+  )
+
+Review.create!(
+  location_id: psang.id,
+  comment: "Fuck me the chef is famous",
+  rating: 3,
+  user_id: igo.id
+  )
 puts 'Finished!'
