@@ -296,6 +296,7 @@ file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614871162/t
 gardette = Location.new(
   address: "24 Rue Saint-Ambroise, 75011 Paris",
   name: "Le Square Gardette",
+  category: "Bistrot",
   entity_id: wagon.id
   )
 gardette.photo.attach(io: file, filename: 'gardette.png', content_type: 'image/png')
@@ -518,6 +519,13 @@ Review.create!(
   comment: "One for the road.",
   rating: 5,
   user_id: igo.id
+  )
+
+Review.create!(
+  location_id: gardette.id,
+  comment: "For special occassions.",
+  rating: 4,
+  user_id: tom.id
   )
 
 puts 'Finished!'
