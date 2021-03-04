@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost:3000/locations/300/events/new -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.algolia-places {
+  width: 100%;
+}
+
+.ap-input, .ap-hint {
+  width: 100%;
+  padding-right: 35px;
+  padding-left: 16px;
+  line-height: 40px;
+  height: 40px;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  outline: none;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+.ap-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.ap-input::-ms-clear {
+  display: none;
+}
+
+.ap-input:hover ~ .ap-input-icon svg,
+.ap-input:focus ~ .ap-input-icon svg,
+.ap-input-icon:hover svg {
+  fill: #aaaaaa;
+}
+
+.ap-dropdown-menu {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-top: 3px;
+  overflow: hidden;
+}
+
+.ap-suggestion {
+  cursor: pointer;
+  height: 46px;
+  line-height: 46px;
+  padding-left: 18px;
+  overflow: hidden;
+}
+
+.ap-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.ap-address {
+  font-size: smaller;
+  margin-left: 12px;
+  color: #aaaaaa;
+}
+
+.ap-suggestion-icon {
+  margin-right: 10px;
+  width: 14px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.ap-suggestion-icon svg {
+  display: inherit;
+  -webkit-transform: scale(0.9) translateY(2px);
+          transform: scale(0.9) translateY(2px);
+  fill: #cfcfcf;
+}
+
+.ap-input-icon {
+  border: 0;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 16px;
+  outline: none;
+}
+
+.ap-input-icon.ap-icon-pin {
+  cursor: pointer;
+}
+
+.ap-input-icon svg {
+  fill: #cfcfcf;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.ap-cursor {
+  background: #efefef;
+}
+
+.ap-cursor .ap-suggestion-icon svg {
+  -webkit-transform: scale(1) translateY(2px);
+          transform: scale(1) translateY(2px);
+  fill: #aaaaaa;
+}
+
+.ap-footer {
+  opacity: .8;
+  text-align: right;
+  padding: .5em 1em .5em 0;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.ap-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ap-footer a svg {
+  vertical-align: middle;
+}
+
+.ap-footer:hover {
+  opacity: 1;
+}
+</style>
+    <title>OLUNCH</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Q1zKhVQeGLr39U7D6JzpjT4je25OdZRPi9gWybSLRqAIvC/Xv8IEwfv06VGsxsqkFfJeXsfHAutkcSceNWLvjg==">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+
+    <link href="./OLUNCH_files/select2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" media="all" href="./OLUNCH_files/application-5045235ec27dcc31754e51381339b5481f584e2a97d20482adacb58ce3b6e77b.css" data-turbolinks-track="reload">
+    <script src="./OLUNCH_files/application-be719ef163b850086f26.js" data-turbolinks-track="reload" defer="defer"></script>
+    <link rel="manifest" href="http://localhost:3000/assets/manifest-44ca062e8a27e124cac65474058d02fc35b0d9b6fc6c5d76e9a0116eae56bbe1.json">
+    
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:3000/assets/apple-icon-57x57-d4b5de9df6107e48fe8b114d497bc315bc30a1b3ce81ed971fcfffcec450c6f0.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:3000/assets/apple-icon-60x60-8b42998ca89097ea8f792a98f723deb9dc24ed093ce82e1a006b8f58f2c62bf6.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:3000/assets/apple-icon-72x72-4a99c1ff98dd58c0903aac20d8aa063813f2e4f62f42d6c318283114f7aa3879.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:3000/assets/apple-icon-76x76-a61c602985dbc0a7cefff6098bd4d793fc4b32e5ef5b83323a78497e31a63743.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:3000/assets/apple-icon-114x114-5a5b2288968c62a97903c3f858262fe1162f33d4981d01c4aabd4e306bbbd621.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:3000/assets/apple-icon-120x120-a17d2ac2a32b18d331eab91fbfbf948cb0ceca43c9ddf8efdc1758ea134f011c.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:3000/assets/apple-icon-144x144-6df19616b1c16b4c0173045aada85895ef19543ab0c0922746e31f827dce190e.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:3000/assets/apple-icon-152x152-bb2fa81f723908782835626121b19affca7668bf0fd0dccb6e2fbe09c436d0ca.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:3000/assets/apple-icon-180x180-16bc946adce086eacbfdd7cbfd209b4a4e21944f55802c05b04f62badfe0209d.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:3000/assets/favicon-32x32-7690b0a82b251a98d414ff3ac98a4c7864a09e42af073af03efaf1d05d979b62.png">
+<link rel="icon" type="image/png" sizes="96x96" href="http://localhost:3000/assets/favicon-96x96-5709e13f4282a0c3cea760a19310cd3f63459c58882298e11fa62269b7c264d8.png">
+  </head>
+
+
+  <body id="events-new" cz-shortcut-listen="true">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <img width="50" height="50" class="avatar nav-item dropdown" id="loading" src="./OLUNCH_files/95crak6q6d8x8vviae34epqa1y83">
+    </button>
+
+
+
+
+  <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/entities/24/locations">
+            <i class="fas fa-map-marked font-size-40px "></i>
+</a>          <p>Map</p>
+        </li>
+
+        <li class="nav-item">
+          <div class="events-upcoming">
+            <a class="nav-link" href="http://localhost:3000/entities/24/dashboard">
+              <i class="fas fa-calendar-day font-size-40px "></i>
+</a>            <p>Events</p>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/entities/24/locations/new">
+            <i class="fas fa-calendar-plus font-size-40px "></i>
+</a>          <p>Create Location</p>
+        </li>
+
+
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/">
+            <i class="fas fa-th-large font-size-40px"></i>
+            <p>Entities</p>
+</a>        </li>
+
+      <div class="log-out">
+        <a class="d-block text-center" rel="nofollow" data-method="delete" href="http://localhost:3000/users/sign_out">
+          <i class="fas fa-sign-out-alt"></i>
+</a>        <p>Log out</p>
+      </div>
+
+
+    </ul>
+  </div>
+
+</div>
+
+    
+
+    <div class="">
+    <div class="form-header d-flex flex-column justify-content-center" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%), url(http://res.cloudinary.com/dz1ndp7wi/image/upload/v66gr0m8vluuiz9hyty5b4lz2ina); background-size: cover;">
+      <div class="text-center new-title">
+        <h1>Le Favori</h1>
+      </div>
+    </div>
+  <div class="container">
+    <div class="mt-4">
+      <div class="text-center">
+        <h1>Create an Event</h1>
+      </div>
+      <form class="simple_form mb-5" id="new_event" novalidate="novalidate" action="http://localhost:3000/locations/300/events" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Q1zKhVQeGLr39U7D6JzpjT4je25OdZRPi9gWybSLRqAIvC/Xv8IEwfv06VGsxsqkFfJeXsfHAutkcSceNWLvjg==">
+        <div class="row justify-content-center">
+          <p>Private</p>
+          <fieldset class="form-group boolean optional event_public"><div class="form-check"><input name="event[public]" type="hidden" value="0"><input class="form-check-input boolean optional toggle" id="public-btn" type="checkbox" value="1" name="event[public]"><label class="form-check-label boolean optional" for="public-btn">Public</label></div></fieldset>
+        </div>
+
+        <span id="invitation">
+          
+            <div class="form-group select required invitations_attendees"><label class="select required" for="invitations_attendees">Attendees <abbr title="required">*</abbr></label><input name="invitations[attendees][]" type="hidden" value=""><select class="form-control select required select2 select2-hidden-accessible" multiple="" name="invitations[attendees][]" id="invitations_attendees" data-select2-id="select2-data-invitations_attendees" tabindex="-1" aria-hidden="true"><option value="98">Demo Man</option>
+<option value="99">Joseph Dulac</option>
+<option value="100">Gabriel Lebrun</option>
+<option value="101">Keziah Smadja</option>
+<option value="102">Thomas Desmoulins</option>
+<option value="103">Igor Murphy</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-1-muyf" style="width: 381px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-invitations_attendees-container"></ul><span class="select2-search select2-search--inline"><textarea class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-invitations_attendees-container" placeholder="" style="width: 0.75em;"></textarea></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+        </span>
+        <div class="form-group string required event_start_at"><label class="string required" for="event_start_at">Event Time <abbr title="required">*</abbr></label><input class="form-control string required datepicker flatpickr-input" type="text" name="event[start_at]" id="event_start_at" readonly="readonly"></div>
+        <input type="submit" name="commit" value="Create" class="button-green" data-disable-with="Create">
+
+
+        <div class="link-to fixed-bottom">
+          <a class="back-btn" href="http://localhost:3000/entities/24/locations">Back</a>
+          <a class="review-btn" href="http://localhost:3000/entities/24/dashboard">My Events</a>
+        </div>
+
+</form>    </div>
+  </div>
+</div>
+
+  
+<div class="flatpickr-calendar hasTime animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year" min="2021" max="2021" disabled=""><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month flatpickr-disabled"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+      <span class="flatpickr-weekday">
+        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+      </span>
+      </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="February 28, 2021">28</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 1, 2021">1</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 2, 2021">2</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 3, 2021">3</span><span class="flatpickr-day today" aria-label="March 4, 2021" aria-current="date" tabindex="-1">4</span><span class="flatpickr-day " aria-label="March 5, 2021" tabindex="-1">5</span><span class="flatpickr-day " aria-label="March 6, 2021" tabindex="-1">6</span><span class="flatpickr-day " aria-label="March 7, 2021" tabindex="-1">7</span><span class="flatpickr-day " aria-label="March 8, 2021" tabindex="-1">8</span><span class="flatpickr-day " aria-label="March 9, 2021" tabindex="-1">9</span><span class="flatpickr-day " aria-label="March 10, 2021" tabindex="-1">10</span><span class="flatpickr-day " aria-label="March 11, 2021" tabindex="-1">11</span><span class="flatpickr-day " aria-label="March 12, 2021" tabindex="-1">12</span><span class="flatpickr-day " aria-label="March 13, 2021" tabindex="-1">13</span><span class="flatpickr-day " aria-label="March 14, 2021" tabindex="-1">14</span><span class="flatpickr-day " aria-label="March 15, 2021" tabindex="-1">15</span><span class="flatpickr-day " aria-label="March 16, 2021" tabindex="-1">16</span><span class="flatpickr-day " aria-label="March 17, 2021" tabindex="-1">17</span><span class="flatpickr-day " aria-label="March 18, 2021" tabindex="-1">18</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 19, 2021">19</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 20, 2021">20</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 21, 2021">21</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 22, 2021">22</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 23, 2021">23</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 24, 2021">24</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 25, 2021">25</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 26, 2021">26</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 27, 2021">27</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 28, 2021">28</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 29, 2021">29</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 30, 2021">30</span><span class="flatpickr-day flatpickr-disabled" aria-label="March 31, 2021">31</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 1, 2021">1</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 2, 2021">2</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 3, 2021">3</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 4, 2021">4</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 5, 2021">5</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 6, 2021">6</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 7, 2021">7</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 8, 2021">8</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 9, 2021">9</span><span class="flatpickr-day nextMonthDay flatpickr-disabled" aria-label="April 10, 2021">10</span></div></div></div></div><div class="flatpickr-time" tabindex="-1"><div class="numInputWrapper"><input class="numInput flatpickr-hour" type="number" aria-label="Hour" tabindex="-1" step="1" min="1" max="12" maxlength="2"><span class="arrowUp"></span><span class="arrowDown"></span></div><span class="flatpickr-time-separator">:</span><div class="numInputWrapper"><input class="numInput flatpickr-minute" type="number" aria-label="Minute" tabindex="-1" step="15" min="0" max="59" maxlength="2"><span class="arrowUp"></span><span class="arrowDown"></span></div><span class="flatpickr-am-pm" title="Click to toggle" tabindex="-1">PM</span></div></div></body></html>
