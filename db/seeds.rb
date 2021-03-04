@@ -297,7 +297,7 @@ lunch_three = Event.new(
 lunch_three.save!
 lunch_public = Event.new(
   location_id: barracao.id,
-  user_id: demo.id,
+  user_id: demoman.id,
   start_at: Time.strptime('03/05/2021 20:30', '%m/%d/%Y %H:%M'),
   public: true,
   capacity: rand(2..6)
