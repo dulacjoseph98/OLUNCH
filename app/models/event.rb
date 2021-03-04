@@ -7,4 +7,8 @@ class Event < ApplicationRecord
   validates :start_at, presence: true
 
   scope :upcoming, -> { where('start_at >= ?', DateTime.now) }
+
+  def accepted_users_as_attendees
+    User.joins(attendees: :event).where(attendees: { status: "accepted"}).where(events: { id: self.id })
+  end
 end

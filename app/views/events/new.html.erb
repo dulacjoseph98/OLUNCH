@@ -29,7 +29,7 @@
         <span id="invitation">
           <%= simple_fields_for :invitations do |x| %>
             <%= x.input :attendees,
-            collection: User.all.map { |user| ["#{user.firstname} #{user.lastname}", user.id]},
+            collection: User.where.not(id: current_user.id).map { |user| ["#{user.firstname} #{user.lastname}", user.id]},
             input_html: { class: "select2", multiple: true } %>
           <% end %>
         </span>
