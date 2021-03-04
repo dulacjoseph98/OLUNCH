@@ -1,5 +1,5 @@
 meta_product_name: "O'LUNCH"
 meta_title: "O'LUNCH - Make your break time matter"
 meta_description: "Organize your lunch breaks, check the reviews of your colleagues and rate locations near your work place."
-meta_image: "olunch-logo.png" # should exist in `app/assets/images/`
+meta_image: "logo-1200-630.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
