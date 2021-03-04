@@ -19,7 +19,7 @@
       <div class="text-center">
         <h1>Create an Event</h1>
       </div>
-      <%= simple_form_for [@location, @event] do |f| %>
+      <%= simple_form_for [@location, @event], html: { class: 'mb-5' } do |f| %>
         <div class="row justify-content-center">
           <p>Private</p>
           <%= f.input :public, as: :boolean,
@@ -34,9 +34,9 @@
           <% end %>
         </span>
         <%= f.input :start_at,
-        label: "Event Time",
-        as: :string,
-        input_html: { class: 'datepicker' } %>
+          label: "Event Time",
+          as: :string,
+          input_html: { class: 'datepicker' } %>
         <%= f.submit "Create", class: "button-green" %>
 
 
