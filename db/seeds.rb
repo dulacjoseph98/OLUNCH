@@ -203,7 +203,7 @@ puts 'Finished!'
 puts 'Creating locations...'
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614596772/yqrxpq0ydvuozt9ya4gz.jpg')
 barracao = Location.new(
-  address: "108 Rue Oberkampf, 75011 Paris",
+  address: "104 Rue Oberkampf, 75011 Paris",
   name: "Barracao",
   category: "Bar",
   entity_id: wagon.id
@@ -274,6 +274,7 @@ kazbar = Location.new(
   address: "86 Ave Parmentier, 75011 Paris",
   name: "Le KazBar",
   category: "Bar",
+  bar: true,
   entity_id: wagon.id
   )
 kazbar.photo.attach(io: file, filename: 'kazbar.jpg', content_type: 'image/jpg')
@@ -284,10 +285,52 @@ murphy = Location.new(
   address: "128 Rue Oberkampf, 75011 Paris",
   name: "Le Murphy's",
   category: "Bar",
+  bar: true,
   entity_id: wagon.id
   )
 murphy.photo.attach(io: file, filename: 'murphy.png', content_type: 'image/png')
 murphy.save!
+
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614868941/kfn9s19giaum9vlm6ix5.jpg')
+cuivres = Location.new(
+  address: "68 Avenue de la République, 75011 Paris",
+  name: "Les cuivres",
+  category: "Bistrot",
+  entity_id: wagon.id
+  )
+cuivres.photo.attach(io: file, filename: 'cuivres.jpg', content_type: 'image/png')
+cuivres.save!
+
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614869307/w1mwrmc4rmwqxpsxop0r.jpg')
+onze = Location.new(
+  address: "83 Rue Jean-Pierre Timbaud, 75011 Paris",
+  name: "Onze Bar",
+  category: "Bar",
+  bar: true,
+  entity_id: wagon.id
+  )
+onze.photo.attach(io: file, filename: 'onze.jpg', content_type: 'image/png')
+onze.save!
+
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614869823/ej68qpvdc1ep4j9zvhjx.jpg')
+canon = Location.new(
+  address: "57 Rue de la Fontaine au Roi, 75011 Paris",
+  name: "La Canonnière",
+  bar: true,
+  entity_id: wagon.id
+  )
+canon.photo.attach(io: file, filename: 'canon.jpg', content_type: 'image/png')
+canon.save!
+
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614870009/virpd45aamwpvhijymsy.jpg')
+ledixsept = Location.new(
+  address: "17 Rue de la Folie Méricourt, 75011 Paris",
+  name: "Le 17",
+  bar: true,
+  entity_id: wagon.id
+  )
+ledixsept.photo.attach(io: file, filename: 'ledixsept.jpg', content_type: 'image/png')
+ledixsept.save!
 
 puts 'Finished!'
 
@@ -392,6 +435,40 @@ Review.create!(
   )
 
 Review.create!(
+  location_id: bocamexa.id,
+  comment: "Not bad.",
+  rating: 4,
+  user_id: tom.id
+  )
+
+Review.create!(
+  location_id: cuivres.id,
+  comment: "Very good place to eat.",
+  rating: 5,
+  user_id: igo.id
+  )
+
+Review.create!(
+  location_id: favori.id,
+  comment: "The n°75 is decent Paris style ham sandwich.",
+  rating: 4,
+  user_id: gab.id
+  )
+
+Review.create!(
+  location_id: onze.id,
+  comment: "If you like cocktails!",
+  rating: 5,
+  user_id: gab.id
+  )
+
+Review.create!(
+  location_id: favori.id,
+  comment: "The Special sandwich is really great.",
+  rating: 5,
+  user_id: jo.id
+  )
+Review.create!(
   location_id: surpriz.id,
   comment: "The best Berlin style Kebab house in Paris.",
   rating: 4,
@@ -399,10 +476,10 @@ Review.create!(
   )
 
 Review.create!(
-  location_id: favori.id,
-  comment: "Great Ham & English Cheddar Cheese sandwich.",
-  rating: 3,
-  user_id: gab.id
+  location_id: surpriz.id,
+  comment: "I've been going for years.",
+  rating: 5,
+  user_id: tom.id
   )
 
 Review.create!(
@@ -410,6 +487,27 @@ Review.create!(
   comment: "Good value for money.",
   rating: 4,
   user_id: kez.id
+  )
+
+Review.create!(
+  location_id: tchai.id,
+  comment: "A decent biriani.",
+  rating: 3,
+  user_id: igo.id
+  )
+
+Review.create!(
+  location_id: canon.id,
+  comment: "Simply canon!",
+  rating: 5,
+  user_id: igo.id
+  )
+
+Review.create!(
+  location_id: ledixsept.id,
+  comment: "One for the road.",
+  rating: 5,
+  user_id: igo.id
   )
 
 puts 'Finished!'

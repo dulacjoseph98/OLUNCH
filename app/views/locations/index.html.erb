@@ -35,7 +35,12 @@
               <i class="fas fa-star"></i>
             <% end %>
 
-            <%= link_to 'See reviews...', location_path(loc) %>
+            <% if loc.reviews.empty? %>
+              <%= link_to 'Add a review...', location_path(loc) %>
+            <% else %>
+              <%= link_to 'See reviews...', location_path(loc) %>
+            <% end %>
+
           </div>
         </div>
 
