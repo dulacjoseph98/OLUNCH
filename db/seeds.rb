@@ -258,13 +258,6 @@ bocamexa = Location.new(
   )
 bocamexa.photo.attach(io: file, filename: 'bocamexa.jpg', content_type: 'image/jpg')
 bocamexa.save!
-monoprix = Location.new(
-  address: "89 Rue Oberkampf, 75011 Paris",
-  name: "Monoprix",
-  category: "Supermarket",
-  entity_id: wagon.id
-  )
-monoprix.save!
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352314/pjlcbkatupodl8drntmf.jpg')
 psang = Location.new(
   address: "55 Rue Oberkampf, 75011 Paris",
@@ -306,36 +299,45 @@ lunch_public.save!
 puts 'Finished!'
 
 puts 'Creating attendees...'
+
 lunch_two_attendee_one = Attendee.new(
   user_id: jo.id,
   event_id: lunch_two.id,
   status: 0
   )
 lunch_two_attendee_one.save!
+
+
 lunch_two_attendee_two = Attendee.new(
   user_id: gab.id,
   event_id: lunch_two.id,
   status: 1
   )
 lunch_two_attendee_two.save!
+
+
 lunch_three_attendee_one = Attendee.new(
   user_id: jo.id,
   event_id: lunch_three.id,
   status: 0
   )
-lunch_public_attendee_one.save!
-lunch_public_attendee_two = Attendee.new(
+lunch_three_attendee_one.save!
+
+
+lunch_public_attendee_one = Attendee.new(
   user_id: kez.id,
   event_id: lunch_public.id,
   status: 0
   )
-lunch_public_attendee_two.save!
-lunch_public_attendee_three = Attendee.new(
+lunch_public_attendee_one.save!
+
+lunch_public_attendee_two = Attendee.new(
   user_id: gab.id,
   event_id: lunch_public.id,
   status: 2
   )
-lunch_public_attendee_three.save!
+lunch_public_attendee_two.save!
+
 puts 'Finished!'
 
 puts 'Creating reviews...'
