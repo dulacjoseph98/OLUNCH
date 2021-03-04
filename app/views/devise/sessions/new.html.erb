@@ -1,7 +1,7 @@
 <div class="card-login">
 
-<%= image_tag "olunch-logo.png", class:"logo" %>
-<h2 class="text-center">Log in</h2>
+<%= image_tag "olunch-logo.png", id:"login" %>
+<%# <h2 class="text-center">Log in</h2> %>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
