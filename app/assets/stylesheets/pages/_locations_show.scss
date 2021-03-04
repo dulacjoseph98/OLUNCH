@@ -194,45 +194,36 @@ span.loc-category {
     display: flex;
     justify-content: space-around;
     padding: 15px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
     background: $brand-background;
-    height: 64px;
+    height: 90px;
+    align-items: center;
 
   .back-btn {
     background: $light-gray;
     display: inline-grid;
-    padding: 5px 20px;
+    padding: 13px 20px;
     border-radius: 25px;
     color: $brand-color-dark;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 0;
     box-shadow: $box-shadow;
+    margin: 0;
+    font-size: 18px;
+    width: 45%;
   }
 
-  // .review-btn {
-  //   background: $light-gray;
-  //   display: inline-grid;
-  //   padding: 5px 20px;
-  //   border-radius: 25px;
-  //   color: $brand-color-dark;
-  //   text-align: center;
-  //   margin-left: 10px;
-  //   margin-right: 0;
-  // }
     .review-btn {
       display: block;
       background: $brand-color;
       border: none;
       display: inline-grid;
-      padding: 5px 20px;
+      padding: 13px 20px;
       border-radius: 25px;
       color: white;
       text-align: center;
-      margin: auto;
-      margin-left: 10px;
-      margin-right: 0;
+      margin: 0;
       box-shadow: $box-shadow;
+      font-size: 18px;
+      width: 45%;
       &:hover {
         box-shadow: 0 0 5px rgba(0,0,0,0.3);
         text-decoration: none;
