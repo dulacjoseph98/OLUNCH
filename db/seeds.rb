@@ -279,7 +279,7 @@ kazbar = Location.new(
 kazbar.photo.attach(io: file, filename: 'kazbar.jpg', content_type: 'image/jpg')
 kazbar.save!
 
-file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614851743/y52tl2ozyrv5oq7eeotk.png')
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614870998/tnmbsbibfy5s2dezorhj.jpg')
 murphy = Location.new(
   address: "128 Rue Oberkampf, 75011 Paris",
   name: "Le Murphy's",
@@ -287,6 +287,15 @@ murphy = Location.new(
   entity_id: wagon.id
   )
 murphy.photo.attach(io: file, filename: 'murphy.png', content_type: 'image/png')
+murphy.save!
+
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614871162/tcgnzma2qftcluu4wvv7.jpg')
+gardette = Location.new(
+  address: "24 Rue Saint-Ambroise, 75011 Paris",
+  name: "Le Square Gardette",
+  entity_id: wagon.id
+  )
+gardette.photo.attach(io: file, filename: 'gardette.png', content_type: 'image/png')
 murphy.save!
 
 puts 'Finished!'
