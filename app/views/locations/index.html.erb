@@ -21,12 +21,13 @@
       <% end %>
 
       <div class="location-show__details">
+        <div>
 
-        <div class="infos-loca">
-          <h2><%= loc.name %></h2>
+          <div class="infos-loca">
+            <h2><%= loc.name %></h2>
+            <span class="loc-category"><%= loc.category %></span>
+          </div>
 
-          <span class="loc-category"><%= loc.category %></span>
-        </div>
           <span class="loc-address"><%= loc.address %></span>
 
           <div class="location-avg-review">
@@ -36,12 +37,13 @@
 
             <%= link_to 'See reviews...', location_path(loc) %>
           </div>
+        </div>
 
           <h5 class="events-nb"><%= loc.today_public_events.count %> <%= "event".pluralize(loc.today_public_events.count) %> today</h5>
           <% if loc.today_public_events.count == 0 %>
           <p class="mb-0">Be the first !</p>
           <% end %>
-          <div class="events">
+          <div class="events flex-grow-1">
 
             <% loc.today_public_events.each do |event| %>
               <div class = "present-users">
@@ -71,7 +73,9 @@
 
             <% end %>
           </div>
-        <%= link_to 'Create Event', new_location_event_path(loc), class: "button" %>
+          <div class="flex-grow-1 d-flex align-items-end justify-content-center">
+            <%= link_to 'Create Event', new_location_event_path(loc), class: "button" %>
+          </div>
       </div>
     </div>
   <% end %>
