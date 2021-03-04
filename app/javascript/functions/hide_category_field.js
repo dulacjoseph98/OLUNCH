@@ -3,9 +3,9 @@ const hideInputField = () => {
   if (btn) {
     btn.addEventListener("click", () => {
       if (btn.checked) {
-        document.querySelector('#categoryfield').classList.add('hidecategoryinput');
+        document.querySelector('#categoryfield > .form-group').classList.add('hidecategoryinput');
       } else {
-        document.querySelector('#categoryfield').classList.remove('hidecategoryinput');
+        document.querySelector('#categoryfield > .form-group').classList.remove('hidecategoryinput');
       }
     });
   }

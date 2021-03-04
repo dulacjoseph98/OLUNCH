@@ -206,6 +206,7 @@ barracao = Location.new(
   address: "108 Rue Oberkampf, 75011 Paris",
   name: "Barracao",
   category: "Bar",
+  bar: true,
   entity_id: wagon.id
   )
 barracao.photo.attach(io: file, filename: 'barracao.jpg', content_type: 'image/jpg')
@@ -274,6 +275,7 @@ kazbar = Location.new(
   address: "86 Ave Parmentier, 75011 Paris",
   name: "Le KazBar",
   category: "Bar",
+  bar: true,
   entity_id: wagon.id
   )
 kazbar.photo.attach(io: file, filename: 'kazbar.jpg', content_type: 'image/jpg')
@@ -284,6 +286,7 @@ murphy = Location.new(
   address: "128 Rue Oberkampf, 75011 Paris",
   name: "Le Murphy's",
   category: "Bar",
+  bar: true,
   entity_id: wagon.id
   )
 murphy.photo.attach(io: file, filename: 'murphy.png', content_type: 'image/png')
