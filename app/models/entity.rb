@@ -1,6 +1,7 @@
 class Entity < ApplicationRecord
   has_many :user_entities
   has_many :locations
+  has_many :events, through: :locations
 
   validates :name, presence: true, uniqueness: true
   has_one_attached :photo

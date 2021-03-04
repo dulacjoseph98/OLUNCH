@@ -94,10 +94,15 @@
   }
 }
 
-#dashboards-dashboard,
+#dashboards-dashboard .card-event .avatar:not(:first-child) {
+  margin: 0 -5px 0 -5px;
+}
+
+#dashboards-dashboard .card-event .avatar.event-author {
+  border: 3px solid #ef8c9e;
+}
+
 #locations-index {
-
-
   .avatar {
     margin: 0 -5px 0 -5px;
     width: 50px;
