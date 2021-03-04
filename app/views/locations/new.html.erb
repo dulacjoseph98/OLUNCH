@@ -5,38 +5,38 @@
   <%#= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
 
   <div class="container">
-    <div class="mt-4">
-      <%= simple_form_for [@entity, @location] do |f| %>
-      <%= f.input :name,
-          label: false,
-          placeholder: 'Location Name',
-          input_html: { class: 'olunch-input'} %>
-        <%= f.input :address,
-          label: false,
-          placeholder: 'Address',
-          input_html: { class: 'olunch-input'} %>
+      <div class="mt-5">
+        <%= simple_form_for [@entity, @location] do |f| %>
+        <%= f.input :name,
+            label: false,
+            placeholder: 'Location Name',
+            input_html: { class: 'olunch-input'} %>
+          <%= f.input :address,
+            label: false,
+            placeholder: 'Address',
+            input_html: { class: 'olunch-input'} %>
 
-        <div class="row justify-content-center" style="color: #495057;">
-          <p>Restaurant</p>
-          <%= f.input :bar, as: :boolean, checked_value: true, unchecked_value: false, input_html: { class: "toggle", id: "baronoff" } %>
-        </div>
+          <div class="row justify-content-center" style="color: #495057;">
+            <p>Restaurant</p>
+            <%= f.input :bar, as: :boolean, checked_value: true, unchecked_value: false, input_html: { class: "toggle", id: "baronoff" } %>
+          </div>
 
-        <div id="categoryfield">
-          <%= f.input :category,
-           label: false,
-           prompt: 'Select Category',
-           collection: ['Asian', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'],
-           input_html: { class: "select2", class: 'olunch-input' },
-           label_html: { class: "test-label" },
-           wrapper_html: { class: "test-wrapper" } %>
-         </div>
-        <%= f.input :photo,
-          as: :file,
-          label: "Upload photo",
-          label_html: { class: "photo-upload-label" },
-          input_html: { class: "d-none"} %>
-        <%= f.submit "Create", class: "button-green" %>
-      <% end %>
-    </div>
+          <div id="categoryfield">
+            <%= f.input :category,
+             label: false,
+             prompt: 'Select Category',
+             collection: ['Asian', 'Bistrot', 'Burger', 'Kebab', 'Coffee Shop', 'Hawaiian', 'Health', 'Lebanese', 'Mexican', 'Pizza', 'Sandwich', 'Supermarket', 'Sushi'],
+             input_html: { class: "select2", class: 'olunch-input' },
+             label_html: { class: "test-label" },
+             wrapper_html: { class: "test-wrapper" } %>
+           </div>
+          <%= f.input :photo,
+            as: :file,
+            label: "Upload photo",
+            label_html: { class: "photo-upload-label" },
+            input_html: { class: "d-none"} %>
+          <%= f.submit "Create", class: "button-green" %>
+        <% end %>
+      </div>
   </div>
 </div>
