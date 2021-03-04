@@ -8,14 +8,14 @@
     <%#= cl_image_tag @location.photo.key, class: 'location-image' %>
   <% else %>
     <div class="form-header d-flex flex-column justify-content-center" style="background-image: url(<%= image_path('foodvtop.jpg') %>); background-size: cover;">
-      <div class="text-center">
+      <div class="text-center new-title">
         <h1><%= @location.name %></h1>
       </div>
     </div>
     <%#= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
   <% end %>
-  <div class="container">
-    <div class="mt-5">
+  <div class="container container-vh67">
+    <div class="">
       <div class="text-center">
         <h1>Create an Event</h1>
       </div>

@@ -7,8 +7,12 @@
   display: flex;
   flex-direction: column;
 
-  > div {
-    flex-grow: 1;
+  // > div {
+  //   flex-grow: 1;
+  // }
+
+  .infos-loca {
+    margin-bottom: 20px;
   }
 
   .button {
@@ -20,7 +24,7 @@
     text-align: center;
     margin-left: 60px;
     margin-right: 60px;
-    margin-top: 40px;
+    // margin-top: 40px;
     box-shadow: $box-shadow;
     font-size: 1rem;
   }
@@ -44,6 +48,7 @@
     padding-bottom: 20px;
     padding-left: 15px;
     margin-left: -15px;
+    align-items: flex-start;
     -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
       display: none;
@@ -60,12 +65,18 @@
     border-radius: 4px;
     margin-right: 15px;
     min-width: 60%;
-    padding: 0 10px;
+    padding: 10px;
     box-shadow: 3px 6px 10px #d8d8d8;
 
     p {
       font-size: 18px;
       color: #353535;
+    }
+
+    .button_join {
+      background: linear-gradient(144.95deg, #A91E37 23.58%, #F6758D 98.96%);
+      color: white;
+      margin: 8px auto 0;
     }
   }
 
@@ -161,6 +172,7 @@ span.loc-category {
 .location-avg-review {
   margin-top: 4px;
   color: #ffc45b;
+  margin-bottom: 16px;
 }
 
 .location-review {
@@ -194,45 +206,36 @@ span.loc-category {
     display: flex;
     justify-content: space-around;
     padding: 15px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
     background: $brand-background;
-    height: 64px;
+    height: 90px;
+    align-items: center;
 
   .back-btn {
     background: $light-gray;
     display: inline-grid;
-    padding: 5px 20px;
+    padding: 13px 20px;
     border-radius: 25px;
     color: $brand-color-dark;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 0;
     box-shadow: $box-shadow;
+    margin: 0;
+    font-size: 18px;
+    width: 45%;
   }
 
-  // .review-btn {
-  //   background: $light-gray;
-  //   display: inline-grid;
-  //   padding: 5px 20px;
-  //   border-radius: 25px;
-  //   color: $brand-color-dark;
-  //   text-align: center;
-  //   margin-left: 10px;
-  //   margin-right: 0;
-  // }
     .review-btn {
       display: block;
       background: $brand-color;
       border: none;
       display: inline-grid;
-      padding: 5px 20px;
+      padding: 13px 20px;
       border-radius: 25px;
       color: white;
       text-align: center;
-      margin: auto;
-      margin-left: 10px;
-      margin-right: 0;
+      margin: 0;
       box-shadow: $box-shadow;
+      font-size: 18px;
+      width: 45%;
       &:hover {
         box-shadow: 0 0 5px rgba(0,0,0,0.3);
         text-decoration: none;

@@ -6,16 +6,19 @@
   display: flex;
   justify-content: center;
   padding-top: 25px;
-  
+
   .button-green{
+
     padding: 16px 40px;
+    margin-top: 0;
+
   }
 
   #login{
     width: 100px;
     display: block;
     margin: 12px auto 20px;
-    margin-bottom: -2px;
+    margin-bottom: 15px;
   }
 }
 

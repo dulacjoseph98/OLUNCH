@@ -22,8 +22,7 @@ class Location < ApplicationRecord
 
   def today_public_events
     events.where(public: true)
-          .where("start_at > ?", Date.today.beginning_of_day)
-          .where("start_at < ?", Date.today.end_of_day)
+          .where("start_at > ?", DateTime.now)
   end
 
   def average_rating
