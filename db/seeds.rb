@@ -35,18 +35,18 @@ puts 'Finished!'
 
 
 puts 'Creating users...'
-demoman = User.new(
-  firstname: "Demo",
+philou = User.new(
+  firstname: "phil",
   lastname: "Man",
-  nickname: "Rfif",
-  email: "demo@lewagon.org",
+  nickname: "philipp",
+  email: "phil@lewagon.org",
   password: "azerty"
   )
 avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
 avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
 file = URI.open(avatar_url)
-demoman.photo.attach(io: file, filename: 'demoman.jpg', content_type: 'image/jpg')
-demoman.save!
+philou.photo.attach(io: file, filename: 'philou.jpg', content_type: 'image/jpg')
+philou.save!
 
 jo = User.new(
   firstname: "Joseph",
@@ -110,7 +110,7 @@ puts 'Finished!'
 
 puts 'Creating user_entities...'
 UserEntity.create!(
-  user_id: demoman.id,
+  user_id: philou.id,
   entity_id: wagon.id,
   role: "Demo guy",
   status: 0
@@ -153,7 +153,7 @@ UserEntity.create!(
   )
 
 UserEntity.create!(
-  user_id: demoman.id,
+  user_id: philou.id,
   entity_id: jojobande.id,
   role: "Demo guy",
   status: 0
@@ -258,6 +258,7 @@ bocamexa = Location.new(
   )
 bocamexa.photo.attach(io: file, filename: 'bocamexa.jpg', content_type: 'image/jpg')
 bocamexa.save!
+
 file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614352314/pjlcbkatupodl8drntmf.jpg')
 psang = Location.new(
   address: "55 Rue Oberkampf, 75011 Paris",
@@ -268,6 +269,25 @@ psang = Location.new(
 psang.photo.attach(io: file, filename: 'psang.jpg', content_type: 'image/jpg')
 psang.save!
 
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614851220/btdkicmovcddjppttmp1.png')
+kazbar = Location.new(
+  address: "86 Ave Parmentier, 75011 Paris",
+  name: "Le KazBar",
+  category: "Bar",
+  entity_id: wagon.id
+  )
+kazbar.photo.attach(io: file, filename: 'kazbar.jpg', content_type: 'image/jpg')
+kazbar.save!
+
+file = URI.open ('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614851743/y52tl2ozyrv5oq7eeotk.png')
+murphy = Location.new(
+  address: "128 Rue Oberkampf, 75011 Paris",
+  name: "Le Murphy's",
+  category: "Bar",
+  entity_id: wagon.id
+  )
+murphy.photo.attach(io: file, filename: 'murphy.png', content_type: 'image/png')
+murphy.save!
 
 puts 'Finished!'
 
@@ -280,6 +300,7 @@ lunch_two = Event.new(
   capacity: 2
   )
 lunch_two.save!
+
 lunch_three = Event.new(
   location_id: barracao.id,
   user_id: gab.id,
@@ -288,14 +309,35 @@ lunch_three = Event.new(
   capacity: 2
   )
 lunch_three.save!
+
 lunch_public = Event.new(
   location_id: barracao.id,
-  user_id: demoman.id,
+  user_id: philou.id,
   start_at: Time.strptime('03/05/2021 20:30', '%m/%d/%Y %H:%M'),
   public: true,
   capacity: rand(2..6)
   )
 lunch_public.save!
+
+
+lunch_public_two = Event.new(
+  location_id: murphy.id,
+  user_id: kez.id,
+  start_at: Time.strptime('03/05/2021 21:30', '%m/%d/%Y %H:%M'),
+  public: true,
+  capacity: rand(2..6)
+  )
+lunch_public_two.save!
+
+lunch_public_three = Event.new(
+  location_id: kazbar.id,
+  user_id: gab.id,
+  start_at: Time.strptime('03/05/2021 22:30', '%m/%d/%Y %H:%M'),
+  public: true,
+  capacity: rand(2..6)
+  )
+lunch_public_three.save!
+
 puts 'Finished!'
 
 puts 'Creating attendees...'
