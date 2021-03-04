@@ -8,6 +8,7 @@ const initFlatpickr = () => {
     enableTime: true,
     // time_24hr: true,
     defaultMinute: 0
+    // minuteIncrement: 15,
   });
 }
 

@@ -34,9 +34,9 @@
           <% end %>
         </span>
         <%= f.input :start_at,
-        label: "Event Time",
-        as: :string,
-        input_html: { class: 'datepicker' } %>
+          label: "Event Time",
+          # as: :string,
+          input_html: { min: DateTime.now, step:'900', class: '' } %>
         <%= f.submit "Create", class: "button-green" %>
 
 

@@ -1,0 +1,21 @@
+#sessions-new {
+  background-image: image-url("food.jpg");
+  background-size: cover;
+  background-position: center right;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  
+  .button-green{
+    padding: 16px 40px;
+  }
+
+  #login{
+    width: 100px;
+    display: block;
+    margin: 12px auto 20px;
+    margin-bottom: -2px;
+  }
+}
+
