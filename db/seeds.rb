@@ -55,9 +55,8 @@ jo = User.new(
   email: "jo@lewagon.org",
   password: "azerty"
   )
-avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
-avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
-file = URI.open(avatar_url)
+
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614779955/dychum6hnnadtdhbws1b.jpg')
 jo.photo.attach(io: file, filename: 'jo.jpg', content_type: 'image/jpg')
 jo.save!
 
@@ -68,9 +67,7 @@ gab = User.new(
   email: "gab@lewagon.org",
   password: "azerty"
   )
-avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=female').read)
-avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
-file = URI.open(avatar_url)
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614779989/pfldxp9wkrydk1c5f3wn.jpg')
 gab.photo.attach(io: file, filename: 'gab.jpg', content_type: 'image/jpg')
 gab.save!
 
@@ -81,9 +78,7 @@ kez = User.new(
   email: "kez@lewagon.org",
   password: "azerty"
   )
-avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
-avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
-file = URI.open(avatar_url)
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614780017/iwvdnlofh6y5ihksskmd.jpg')
 kez.photo.attach(io: file, filename: 'kez.jpg', content_type: 'image/jpg')
 kez.save!
 
@@ -107,9 +102,7 @@ igo = User.new(
   email: "igo@lewagon.org",
   password: "azerty"
   )
-avatar_api_response = JSON.parse(open('https://randomuser.me/api/?gender=male').read)
-avatar_url = avatar_api_response['results'].first['picture']['thumbnail']
-file = URI.open(avatar_url)
+file = URI.open('https://res.cloudinary.com/dz1ndp7wi/image/upload/v1614780042/oeauebvo6vy4aqrakqse.jpg')
 igo.photo.attach(io: file, filename: 'igor.jpg', content_type: 'image/jpg')
 igo.save!
 
