@@ -2,7 +2,7 @@ import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  const navbar = document.querySelector(".navbar-collapse");
+  const navbar = document.querySelector(".navbar-content");
 
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -13,8 +13,8 @@ const initMapbox = () => {
     });
 
     mapElement.addEventListener("click", (event) => {
-      if (navbar.classList.contains("show")) {
-        navbar.classList.remove("show");
+      if (!navbar.classList.contains("navbar-hidden")) {
+        navbar.classList.add("navbar-hidden");
       }
     })
 
@@ -40,8 +40,8 @@ const initMapbox = () => {
       // ajouter un eventListener sur le marker (click)
       markerDiv.addEventListener('click', (event) => {
 
-        if (navbar.classList.contains("show")) {
-          navbar.classList.remove("show");
+        if (!navbar.classList.contains("navbar-hidden")) {
+          navbar.classList.add("navbar-hidden");
         }
         const locationId = markerDiv.dataset.locationId;
         const locationDivs = document.querySelectorAll('.location-show');
