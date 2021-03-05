@@ -31,6 +31,7 @@ import "bootstrap";
 import { toggleInput } from "../functions/event_form";
 import { showReviewDiv } from "../functions/show_review_div";
 import { hideInputField } from '../functions/hide_category_field';
+import { toggleNavbar } from "../functions/toggle_navbar";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSelect2 } from "../plugins/init_select2";
@@ -44,6 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   toggleInput();
   showReviewDiv();
   hideInputField();
+  toggleNavbar();
 
   initMapbox();
   initSelect2();

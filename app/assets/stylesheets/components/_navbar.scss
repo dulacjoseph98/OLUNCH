@@ -107,21 +107,36 @@ li.nav-item {
   // animation: rotation 0.95s linear;
 }
 
-.navbar-collapse:not(.show) {
-  animation: backslide 0.95s forwards;
-  display: block;
-}
-.navbar-collapse.show {
-  animation: slide 0.95s forwards;
-}
+// .navbar-collapse:not(.show) {
+//   // animation: backslide 0.95s forwards;
+//   left: -100px;
+//   display: block;
+// }
+// .navbar-collapse.show {
+//   left: 0;
+//   // animation: slide 0.95s forwards;
+// }
 
+// .navbar-lewagon .navbar-collapse.show {
+//     left: 0;
+// }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
+.navbar-toggle {
+  z-index: 2;
+  background: transparent;
+}
+.navbar-content {
+  width: 100px;
+  transform: translateX(0%);
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+
+  &.navbar-hidden {
+  transition: none;
+  transform: translateX(-100%);
   }
 }
 
@@ -139,3 +154,12 @@ li.nav-item {
   font-size: 35px;
   color: lightgrey;
 }
+
+// @keyframes rotation {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(359deg);
+//   }
+// }

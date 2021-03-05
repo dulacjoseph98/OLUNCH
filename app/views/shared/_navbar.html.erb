@@ -2,14 +2,18 @@
 
 
   <% if user_signed_in? %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <%#= cl_image_tag current_entity.photo.key, width: 50, height: 50, class: "avatar nav-item dropdown", id:"loading" %>
+    </button> -->
+
+
+    <button class="navbar-toggle">
           <%= cl_image_tag current_entity.photo.key, width: 50, height: 50, class: "avatar nav-item dropdown", id:"loading" %>
     </button>
 
 
-
-
-  <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
+  <div class="navbar-content bg-white navbar-hidden">
+  <!-- <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent"> -->
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
@@ -36,7 +40,7 @@
           <%= link_to new_entity_location_path(current_entity), class: "nav-link" do %>
             <i class="fas fa-calendar-plus font-size-40px <%= "active" if controller.controller_name == "locations" && controller.action_name == "new" %>"></i>
           <% end %>
-          <p>Create Location</p>
+          <p>Create<br>Location</p>
         </li>
 
 
