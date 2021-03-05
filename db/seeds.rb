@@ -15,11 +15,11 @@ puts 'Finished'
 # creation of data in the tables starting with those with no dependencies
 puts 'Creating entities...'
 jojobande = Entity.new(
-  address: "Emirates Stadium, 7AJ Hornsey Rd, London N7 7AJ, United Kingdom",
-  name: "Footclub"
+  address: "55 Rue du Faubourg Saint-Honoré, 75008 Paris",
+  name: "Jojo Flingos"
   )
-file = URI.open('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614874381/cdgflb38jfijmiggqjlb.png')
-jojobande.photo.attach(io: file, filename: 'arsenal.png', content_type: 'image/png')
+file = URI.open('http://res.cloudinary.com/dz1ndp7wi/image/upload/v1614940669/q7cwybean2kpngvird2l.jpg')
+jojobande.photo.attach(io: file, filename: 'gabjo.png', content_type: 'image/png')
 jojobande.save!
 
 
