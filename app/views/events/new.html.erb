@@ -14,12 +14,12 @@
     </div>
     <%#= image_tag image_path('foodvtop.jpg'), class: 'location-image' %>
   <% end %>
-  <div class="container container-vh67">
+  <div class="container container-vh67 margin-bottom-90px">
     <div class="">
       <div class="text-center">
         <h1>Create an Event</h1>
       </div>
-      <%= simple_form_for [@location, @event], html: { class: 'mb-5' } do |f| %>
+      <%= simple_form_for [@location, @event], html: { class: '' } do |f| %>
         <div class="row justify-content-center">
           <p>Private</p>
           <%= f.input :public, as: :boolean,
